@@ -1,10 +1,13 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import LoginPage from './page/LoginPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Social Network</h1>
+      <>
+        <LoginPage />
+      </>
     </div>
   );
 }
