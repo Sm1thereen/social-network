@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'localhost:5000';
+const API_BASE_URL = 'http://localhost:5000';
 
 export const registrationUser = async (
   name: string,
@@ -32,9 +32,13 @@ export const LoginUser = async (email: string, password: string) => {
         'Content-Type': 'application/json',
       },
     });
+    if (response.status === 200) {
+      console.log('Login successfull', response.data.token);
+    } else {
+      console.error('Login failed', response.status, response.data);
+    }
     return response.data;
   } catch (error) {
     console.error('Error:', error);
   }
 };
-export {};

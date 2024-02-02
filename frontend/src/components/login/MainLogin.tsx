@@ -4,6 +4,7 @@ import zod from 'zod';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {IRegistration} from '../../interfaces/interfaces';
+import {registrationUser} from '../../services/api';
 
 const RegistrationShema = zod.object({
   name: zod.string().min(3).max(25),
@@ -14,7 +15,12 @@ const RegistrationShema = zod.object({
 export default function MainLogin() {
   const onSumbit = async (data: IRegistration) => {
     try {
-      console.log('data:', data);
+      const response = await registrationUser(
+        data.name,
+        data.email,
+        data.password
+      );
+      console.log('response:', response);
     } catch (error) {
       console.error('Error', error);
     }
