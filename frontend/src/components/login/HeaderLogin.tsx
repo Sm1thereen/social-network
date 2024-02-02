@@ -5,6 +5,8 @@ import zod from 'zod';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {ILogin} from '../../interfaces/interfaces';
+import {loginUser} from '../../services/api';
+import setAccessToken from '../../services/setAccessToken';
 
 const LoginShema = zod.object({
   email: zod.string().email(),
@@ -14,7 +16,8 @@ const LoginShema = zod.object({
 export default function HeaderLogin() {
   const onSumbit = async (data: ILogin) => {
     try {
-      console.log('data:', data);
+      const response = await loginUser(data.email, data.password);
+      await setAccessToken(response);
     } catch (error) {
       console.error('Error', error);
     }

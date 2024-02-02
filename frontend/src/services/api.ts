@@ -20,7 +20,7 @@ export const registrationUser = async (
     console.error('Error:', error);
   }
 };
-export const LoginUser = async (email: string, password: string) => {
+export const loginUser = async (email: string, password: string) => {
   try {
     const data = JSON.stringify({
       email,

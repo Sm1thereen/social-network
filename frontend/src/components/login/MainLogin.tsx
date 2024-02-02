@@ -5,6 +5,7 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {IRegistration} from '../../interfaces/interfaces';
 import {registrationUser} from '../../services/api';
+import setAccessToken from '../../services/setAccessToken';
 
 const RegistrationShema = zod.object({
   name: zod.string().min(3).max(25),
@@ -20,6 +21,7 @@ export default function MainLogin() {
         data.email,
         data.password
       );
+      await setAccessToken(response);
       console.log('response:', response);
     } catch (error) {
       console.error('Error', error);
