@@ -1,0 +1,156 @@
+.header {
+    /* background-color: #f0f0f0; */
+    padding: 0.625rem;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.list__page {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.page__link {
+    color: #121212;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.profile-list {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+}
+
+.list-icons {
+    margin-left: 0.625rem;
+}
+
+.header-icons {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main */
+.main {
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.main__home {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.posts__wrapper {}
+
+.recomend__wrapper {
+    background-color: aqua;
+}
+
+/* Post */
+.posts__wrapper {
+    margin-top: 3.75rem;
+}
+
+.create-post__wrapper {
+    display: grid;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 5.625rem;
+}
+
+.create-post__photo {
+    margin: auto;
+}
+
+.create__post {
+    width: 45rem;
+    height: 12rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+    padding-top: 0.625rem;
+    line-height: normal;
+    padding: 1.125rem 1.875rem 1.875rem 2.0625rem;
+    resize: none;
+}
+
+/* Card-post */
+.card-post__wrapper {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.08);
+    /* margin-bottom: ; */
+}
+
+.card-profile__info {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    display: flex;
+}
+
+.card__info {
+    margin-top: 0.625rem;
+    margin-left: 0.3125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4375rem;
+}
+
+.user__name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.user__job {
+    color: #807e7e;
+}
+
+.data__card {
+    color: #807e7e;
+}
+
+.card-post__text {
+    color: #3E3E59;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.post__img {
+    width: 49rem;
+}
+
+.card-post__img {
+    display: flex;
+    padding: 1.5625rem 1.5rem;
+}
+
+.card-post__statistics {
+    margin-left: 1.5rem;
+    display: flex;
+}
+
+.post-analytics {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.post-analytics__item {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+}
+
+.post-analytics {
+    margin-bottom: 24px;
+}

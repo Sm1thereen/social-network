@@ -1,5 +1,5 @@
 /* Header */
-.header {
+.header-login {
     width: 100%;
     position: fixed;
     left: 0;
@@ -11,7 +11,7 @@
 
 }
 
-.header__container {
+.header-login__container {
     position: relative;
     display: flex;
     justify-content: space-between;
