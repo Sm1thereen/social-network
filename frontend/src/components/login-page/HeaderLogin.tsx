@@ -34,8 +34,8 @@ export default function HeaderLogin() {
   });
   return (
     <>
-      <header className="header">
-        <div className="header__container">
+      <header className="header-login">
+        <div className="header-login__container">
           <div className="header__logo">
             <img src={logo} alt="" />
           </div>
