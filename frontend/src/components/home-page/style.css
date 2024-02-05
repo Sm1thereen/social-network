@@ -36,8 +36,8 @@
 }
 
 .header-icons {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 /* Main */
@@ -52,7 +52,7 @@
 }
 
 
-.recomend__wrapper {}
+.recommend__wrapper {}
 
 /* Post */
 .posts__wrapper {
@@ -154,8 +154,9 @@
     margin-bottom: 1.5rem;
 }
 
-/* Recomend */
-.recomend__people {
+/* recommend */
+
+.recommend-card {
     height: auto;
     width: 26.5rem;
     background-color: #fff;
@@ -164,14 +165,14 @@
     border-radius: 0.9375rem;
 }
 
-.recomend__people__title {
+.recommend-title {
     padding-top: 0.9375rem;
     font-size: 1.25rem;
     font-weight: 500;
     text-align: center;
 }
 
-.recomend__card {
+.recommend__card {
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -179,7 +180,7 @@
     gap: 0.9375rem;
 }
 
-.recomend__card__item {
+.recommend__card__item {
     display: grid;
     grid-template-columns: 80% 20%;
     border: 0.0625rem solid #f3f3f3;
@@ -190,24 +191,24 @@
 
 }
 
-.recomend__card__user {
+.recommend__card__user {
     display: flex;
     align-items: center;
 
 }
 
-.recomend__card__info {
+.recommend__card__info {
     margin: 0.1875rem 0.625rem 0 0.3125rem;
     display: flex;
     flex-direction: column;
     gap: 0.3125rem;
 }
 
-.recomend__card__text {
+.recommend__card__text {
     font-size: 0.875rem;
 }
 
-.recomend__card__btn {
+.recommend__card__btn {
     width: 4.625rem;
     height: 2rem;
     border: 0.0625rem solid #0BAACA;
@@ -223,5 +224,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 15px;
+    padding-bottom: 0.9375rem;
+}
+
+/* Recommend events */
+.recommend__events__card {
+    width: 23.5rem;
+    height: 4.75rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #f3f3f3
+}
+
+.events__calendar {
+    width: 3.375rem;
+    height: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.events__calendar__data {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events__calendar__month {
+    background-color: #D6A206;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events__info {
+    display: flex;
+    gap: 0.3125rem;
+    flex-direction: column;
+    margin-left: 0.625rem;
+}
+
+.events__info__name {
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+.events__creator__name {
+    color: #807e7e;
+    font-weight: 600;
+    font-size: 0.8125rem;
+}
+
+.events__info__link {
+    font-size: 0.8125rem;
+    color: #0BAACA;
 }

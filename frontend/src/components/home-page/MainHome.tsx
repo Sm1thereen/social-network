@@ -8,7 +8,8 @@ import arrow from '../../assets/home/recomend/arrow-right.svg';
 import {zodResolver} from '@hookform/resolvers/zod';
 import zod from 'zod';
 import CardPost from './post-card/CardPost';
-import {Link} from 'react-router-dom';
+import RecommendAccount from './recommend/RecommendAccount';
+import RecommendEvents from './recommend/RecommendEvents';
 
 const createPostShema = zod.object({
   createpost: zod.string().min(10).max(500),
@@ -54,67 +55,8 @@ export default function MainHome() {
               <CardPost />
             </div>
             <div className="recomend__wrapper">
-              <div className="recomend__people">
-                <h1 className="recomend__people__title">
-                  People you might know
-                </h1>
-                <ul className="recomend__card">
-                  <li className="recomend__card__item">
-                    <div className="recomend__card__user">
-                      <img src={recomend} alt="" />
-                      <div className="recomend__card__info">
-                        <h2 className="user__name recomend__card__text">
-                          Vishnu Kumar Agrawal
-                        </h2>
-                        <p className="user__job recomend__card__text">
-                          Ux Designer at Divim Technology
-                        </p>
-                        <p className="data__card recomend__card__text">
-                          25 Nov at 12:24 PM
-                        </p>
-                      </div>
-                    </div>
-                    <button className="recomend__card__btn">Follow</button>
-                  </li>
-                  <li className="recomend__card__item">
-                    <div className="recomend__card__user">
-                      <img src={recomend} alt="" />
-                      <div className="recomend__card__info">
-                        <h2 className="user__name recomend__card__text">
-                          Vishnu Kumar Agrawal
-                        </h2>
-                        <p className="user__job recomend__card__text">
-                          Ux Designer at Divim Technology
-                        </p>
-                        <p className="data__card recomend__card__text">
-                          25 Nov at 12:24 PM
-                        </p>
-                      </div>
-                    </div>
-                    <button className="recomend__card__btn">Follow</button>
-                  </li>
-                  <li className="recomend__card__item">
-                    <div className="recomend__card__user">
-                      <img src={recomend} alt="" />
-                      <div className="recomend__card__info">
-                        <h2 className="user__name recomend__card__text">
-                          Vishnu Kumar Agrawal
-                        </h2>
-                        <p className="user__job recomend__card__text">
-                          Ux Designer at Divim Technology
-                        </p>
-                        <p className="data__card recomend__card__text">
-                          25 Nov at 12:24 PM
-                        </p>
-                      </div>
-                    </div>
-                    <button className="recomend__card__btn">Follow</button>
-                  </li>
-                </ul>
-                <Link to="/" className="recommend__card__link">
-                  View all recomendations <img src={arrow} alt="" />{' '}
-                </Link>
-              </div>
+              <RecommendAccount />
+              <RecommendEvents />
             </div>
           </section>
         </div>
