@@ -4,6 +4,7 @@ import like from '../../../assets/home/cards/like-2.svg';
 import comment from '../../../assets/home/cards/comment.svg';
 import share from '../../../assets/home/cards/share.svg';
 import bookmark from '../../../assets/bookmark.svg';
+
 export default function CardInfoPost() {
   return (
     <>

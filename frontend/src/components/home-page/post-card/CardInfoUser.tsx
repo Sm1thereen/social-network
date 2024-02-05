@@ -1,5 +1,5 @@
 import React from 'react';
-import woman from '../../../assets/header/woman.png';
+import woman from '../../../assets/home/cards/woman.png';
 
 export default function CardInfoUser() {
   return (
