@@ -1,0 +1,146 @@
+.events__container {
+    padding-top: 4.6875rem;
+}
+
+.search__events {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.search__event {
+    width: 15rem;
+    height: 3.125rem;
+    border: 1px solid gray;
+    border-radius: 0.3125rem;
+    padding: 0 1rem;
+}
+
+.find-events__btn {
+    width: 7rem;
+    background-color: #0BAACA;
+    font-weight: 600;
+}
+
+.find-events__btn:hover {
+    background-color: rgba(11, 170, 202, 0.45);
+}
+
+.events {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+}
+
+/*  Events general  */
+.events__general {
+    margin-top: 4.375rem;
+}
+
+.create__event {
+    display: flex;
+    justify-content: center;
+}
+
+.create__event__btn {
+    width: 15rem;
+    background-color: #0BAACA;
+    height: 5rem;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.create__event__btn:hover {
+    background-color: rgba(11, 170, 202, 0.45);
+}
+
+.general__events {
+    margin-top: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+    padding: 0.9375rem;
+}
+
+.general__title {
+    font-size: 1.40rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.9375rem;
+}
+
+.general__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.925rem;
+}
+
+.general__events__list {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.general__events__link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recommend__events__card {
+    width: 23.5rem;
+    height: 4.75rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #f3f3f3
+}
+
+.events__calendar {
+    width: 3.375rem;
+    height: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.events__calendar__data {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events__calendar__month {
+    background-color: #D6A206;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events__info {
+    display: flex;
+    gap: 0.3125rem;
+    flex-direction: column;
+    margin-left: 0.625rem;
+}
+
+.events__info__name {
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+.events__creator__name {
+    color: #807e7e;
+    font-weight: 600;
+    font-size: 0.8125rem;
+}
+
+.events__info__link {
+    font-size: 0.8125rem;
+    color: #0BAACA;
+}

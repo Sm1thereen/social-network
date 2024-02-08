@@ -3,10 +3,11 @@ import '../style.css';
 import {Link} from 'react-router-dom';
 import arrow from '../../../assets/home/recommend/arrow-right.svg';
 
-const RecomendEvents = () => {
+
+const RecommendEvents: React.FC<{title: string}> = ({title}) => {
   return (
     <div className="recommend__events recommend-card">
-      <h2 className="recommend__events recommend-title">Upcoming Events</h2>
+      <h2 className="recommend__events recommend-title">{title}</h2>
       <ul className="recommend__card">
         <li className="recommend__events__card">
           <div className="events__calendar">
@@ -67,4 +68,4 @@ const RecomendEvents = () => {
   );
 };
 
-export default RecomendEvents;
+export default RecommendEvents;

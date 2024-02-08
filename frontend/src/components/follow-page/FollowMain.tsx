@@ -17,7 +17,7 @@ const FollowMain = () => {
   };
   return (
     <>
-      <main className="main-follow">
+      <main className="main-content">
         <div className="follow__container">
           <nav className="follow__nav">
             <button className={`follow__nav__btn ${page === 'following' ? 'btn-active' : ''}`}
