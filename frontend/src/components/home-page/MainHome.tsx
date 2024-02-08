@@ -2,8 +2,6 @@ import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import './style.css';
 import woman from '../../assets/home/cards/woman.png';
-import recomend from '../../assets/home/recomend/recomend.jpg';
-import arrow from '../../assets/home/recomend/arrow-right.svg';
 
 import {zodResolver} from '@hookform/resolvers/zod';
 import zod from 'zod';
@@ -19,7 +17,7 @@ type FormData = {
   createPost: string;
 };
 
-export default function MainHome() {
+const MainHome = () => {
   const {
     handleSubmit,
     formState: {errors},
@@ -63,4 +61,5 @@ export default function MainHome() {
       </main>
     </>
   );
-}
+};
+export default MainHome;

@@ -2,7 +2,8 @@ import React from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 import arrow from '../../../assets/home/recommend/arrow-right.svg';
-export default function RecommendEvents() {
+
+const RecomendEvents = () => {
   return (
     <div className="recommend__events recommend-card">
       <h2 className="recommend__events recommend-title">Upcoming Events</h2>
@@ -64,4 +65,6 @@ export default function RecommendEvents() {
       </Link>
     </div>
   );
-}
+};
+
+export default RecomendEvents;
