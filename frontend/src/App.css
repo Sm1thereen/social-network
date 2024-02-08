@@ -100,8 +100,6 @@ h6 {
 }
 
 
-
-
 [class*="__container"] {
     max-width: 1140px;
     padding-left: 0.9375rem;
@@ -116,3 +114,4 @@ body {
 .content {
     height: 100vh;
 }
+

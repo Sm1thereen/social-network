@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import recommend from '../../../assets/home/recommend/recommend.jpg';
 import arrow from '../../../assets/home/recommend/arrow-right.svg';
 
-export default function RecommendAccount() {
+const ReccomendAccount = () => {
   return (
     <>
       <div className="recommend__people recommend-card">
@@ -69,4 +69,6 @@ export default function RecommendAccount() {
       </div>
     </>
   );
-}
+};
+
+export default ReccomendAccount;

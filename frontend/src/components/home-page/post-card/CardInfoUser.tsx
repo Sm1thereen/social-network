@@ -1,7 +1,7 @@
 import React from 'react';
 import woman from '../../../assets/home/cards/woman.png';
 
-export default function CardInfoUser() {
+const CardInfoUser = () => {
   return (
     <div className="card-profile__info">
       <img src={woman} alt="" />
@@ -12,4 +12,5 @@ export default function CardInfoUser() {
       </div>
     </div>
   );
-}
+};
+export default CardInfoUser;

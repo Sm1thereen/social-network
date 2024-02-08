@@ -5,7 +5,7 @@ import comment from '../../../assets/home/cards/comment.svg';
 import share from '../../../assets/home/cards/share.svg';
 import bookmark from '../../../assets/bookmark.svg';
 
-export default function CardInfoPost() {
+const CardInfoPost = () => {
   return (
     <>
       <div className="card-post__text">
@@ -60,4 +60,5 @@ export default function CardInfoPost() {
       </div>
     </>
   );
-}
+};
+export default CardInfoPost;
