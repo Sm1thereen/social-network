@@ -3,15 +3,21 @@ import './style.css';
 import {Link} from 'react-router-dom';
 import arrow from '../../assets/events/chevron-right.svg';
 import RecommendEvents from '../home-page/recommend/RecommendEvents';
+import defaultImg from '../../assets/events/defaultImg.png';
+import location from '../../assets/events/card/location.svg';
+import clock from '../../assets/events/card/time.svg';
+import members from '../../assets/events/card/members.svg';
+import EventsCard from './events-card/EventsCard';
 
 const EventsMain = () => {
+
   return (
     <>
-      <main className="main-content">
+      <main className="main-events">
         <div className="events__container">
           <div className="search__events">
             <input type="text" className="search__event" placeholder="Search events here" />
-            <button className="find-events__btn">Find Events</button>
+            {/*<button className="find-events__btn">Find Events</button>*/}
           </div>
           <div className="events">
             <div className="events__general">
@@ -47,9 +53,14 @@ const EventsMain = () => {
                 <RecommendEvents title="Sheduled Events" />
               </div>
             </div>
-
             <div className="events__card">
-
+              <ul className="events__card__list">
+                <EventsCard />
+                <EventsCard />
+                <EventsCard />
+                <EventsCard />
+                <EventsCard />
+              </ul>
             </div>
           </div>
         </div>
