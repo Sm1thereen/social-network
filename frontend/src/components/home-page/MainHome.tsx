@@ -54,7 +54,7 @@ const MainHome = () => {
             </div>
             <div className="recomend__wrapper">
               <RecommendAccount />
-              <RecommendEvents />
+              <RecommendEvents title={'Upcoming Events'} />
             </div>
           </section>
         </div>

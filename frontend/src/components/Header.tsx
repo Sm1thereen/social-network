@@ -31,7 +31,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="page__item">
-                <Link to="/create"
+                <Link to="/events"
                       className={`page__link ${location.pathname === '/events' ? 'page__link--active' : ''}`}>
                   Events
                 </Link>
