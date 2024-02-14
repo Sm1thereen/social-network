@@ -6,23 +6,27 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {IRegistration} from '../../interfaces/interfaces';
 import {registrationUser} from '../../services/api';
 import setAccessToken from '../../services/setAccessToken';
+import {useNavigate} from 'react-router-dom';
 
 const RegistrationShema = zod.object({
-  name: zod.string().min(3).max(25),
+  firstName: zod.string().min(3).max(25),
+  lastName: zod.string().min(3).max(25),
   email: zod.string().email(),
   password: zod.string().min(6).max(48),
 });
 
 export default function MainLogin() {
+  const navigate = useNavigate();
   const onSumbit = async (data: IRegistration) => {
     try {
       const response = await registrationUser(
-        data.name,
+        data.firstName,
+        data.lastName,
         data.email,
-        data.password
+        data.password,
       );
       await setAccessToken(response);
-      console.log('response:', response);
+      navigate('/home');
     } catch (error) {
       console.error('Error', error);
     }
@@ -58,37 +62,49 @@ export default function MainLogin() {
                 <h1 className="form__title">Registration</h1>
                 <input
                   type="text"
-                  className="registration__name input-registration"
-                  placeholder="Enter name"
-                  {...register('name')}
+                  className={`registration__name input-registration ${errors.firstName ? 'error-input' : ''}`}
+                  placeholder="Enter First Name"
+                  {...register('firstName')}
                 />
-                {errors.name && (
-                  <p style={{color: 'red', fontWeight: '500'}}>
-                    Name 3 between 25 symbols
-                  </p>
-                )}
                 <input
                   type="text"
-                  className="registration__email input-registration"
+                  className={`registration__name input-registration ${errors.lastName ? 'error-input' : ''}`}
+                  placeholder="Enter Last Name"
+                  {...register('lastName')}
+                />
+                <input
+                  type="text"
+                  className={`registration__email input-registration ${errors.email ? 'error-input' : ''}`}
                   placeholder="Enter email"
                   {...register('email')}
                 />
-                {errors.email && (
-                  <p style={{color: 'red', fontWeight: '500'}}>
-                    {errors.email.message}
-                  </p>
-                )}
                 <input
                   type="password"
-                  className="registration__password input-registration"
+                  className={`registration__password input-registration ${errors.password ? 'error-input' : ''}`}
                   placeholder="Enter password"
                   {...register('password')}
                 />
-                {errors.password && (
+                {errors.password ? (
                   <p style={{color: 'red', fontWeight: '500'}}>
                     Password 6 between 48 symbols
                   </p>
-                )}
+                ) : errors.email ? (
+                    <p style={{color: 'red', fontWeight: '500'}}>
+                      {errors.email.message}
+                    </p>
+                  )
+                  :
+                  errors.firstName ? (
+                      <p style={{color: 'red', fontWeight: '500'}}>
+                        FirstName 3 between 25 symbols
+                      </p>
+                    ) :
+                    errors.firstName && (
+                      <p style={{color: 'red', fontWeight: '500'}}>
+                        FirstName 3 between 25 symbols
+                      </p>
+                    )
+                }
                 <button className="registration__button" type="submit">
                   Submit
                 </button>

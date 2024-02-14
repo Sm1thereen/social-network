@@ -5,37 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8b797ea-bef7-48cd-b426-d6f406f37714" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/10.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/13.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/12.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/14.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/18.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/18.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/15.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/16.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/19.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/19.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/20.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/20.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/5.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/6.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/header/bookmark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/header/bookmark.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/header/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/header/search.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/follow-page/FollowMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/follow-page/FollowMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/home-page/MainHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home-page/MainHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home-page/post-card/CardInfoPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home-page/post-card/CardInfoPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/home-page/recommend/RecommendAccount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home-page/recommend/RecommendAccount.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/home-page/recommend/RecommendEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/home-page/recommend/RecommendEvents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login-page/HeaderLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login-page/HeaderLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login-page/MainLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login-page/MainLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login-page/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login-page/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/interfaces/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/interfaces/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -47,6 +69,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="1-Authorization-client" />
+                    <option name="lastUsedInstant" value="1707740690" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="4-EventsPage" />
                     <option name="lastUsedInstant" value="1707388680" />
@@ -83,7 +109,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4-EventsPage&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;1-Authorization-client&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;21.0.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.17&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/ivan/Programming/social-network&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -91,7 +119,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/ivan/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/ivan/Programming/social-network/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -105,7 +133,12 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/assets/home/cards" />
+      <recent name="$PROJECT_DIR$/frontend/src/assets/header" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
     </key>
   </component>
@@ -123,11 +156,20 @@
       <workItem from="1707381715578" duration="89000" />
       <workItem from="1707385960856" duration="2302000" />
       <workItem from="1707396789615" duration="6381000" />
+      <workItem from="1707815638861" duration="569000" />
+      <workItem from="1707828514874" duration="3125000" />
+      <workItem from="1707896878557" duration="6154000" />
+      <workItem from="1707917597124" duration="2393000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server/index.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

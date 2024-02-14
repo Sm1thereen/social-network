@@ -1,9 +1,7 @@
 import React from 'react';
 import testPost from '../../../assets/home/cards/test-post.png';
-import like from '../../../assets/home/cards/like-2.svg';
-import comment from '../../../assets/home/cards/comment.svg';
-import share from '../../../assets/home/cards/share.svg';
-import bookmark from '../../../assets/bookmark.svg';
+import like from '../../../assets/home/cards/like.svg';
+import bookmark from '../../../assets/header/bookmark.svg';
 
 const CardInfoPost = () => {
   return (
@@ -43,14 +41,6 @@ const CardInfoPost = () => {
         <ul className="post-analytics">
           <li className="post-analytics__item">
             <img src={like} alt="" />
-            <p className="post-analytics__count">15</p>
-          </li>
-          <li className="post-analytics__item">
-            <img src={comment} alt="" />
-            <p className="post-analytics__count">15</p>
-          </li>
-          <li className="post-analytics__item">
-            <img src={share} alt="" />
             <p className="post-analytics__count">15</p>
           </li>
           <li className="post-analytics__item">

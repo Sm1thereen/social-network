@@ -7,15 +7,26 @@ import FollowPage from './page/FollowPage';
 import EventsPage from './page/EventsPage';
 
 function App() {
+  const accessToken = localStorage.getItem('accessToken');
   return (
     <div className="App">
       <>
         <Router>
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/follow" element={<FollowPage />} />
-            <Route path="/events" element={<EventsPage />} />
+            {
+              accessToken ?
+                (
+                  <>
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/follow" element={<FollowPage />} />
+                    <Route path="/events" element={<EventsPage />} />
+                  </>
+                )
+                : (
+                  <></>
+                )
+            }
           </Routes>
         </Router>
       </>

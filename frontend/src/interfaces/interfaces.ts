@@ -2,8 +2,10 @@ export interface ILogin {
   email: string;
   password: string;
 }
+
 export interface IRegistration {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 }
