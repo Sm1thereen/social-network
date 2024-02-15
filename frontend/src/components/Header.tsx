@@ -39,6 +39,12 @@ const Header = () => {
                   Events
                 </Link>
               </li>
+              <li className="page__item">
+                <Link to="/profile"
+                      className={`page__link ${location.pathname === '/profile' ? 'page__link--active' : ''}`}>
+                  Profile
+                </Link>
+              </li>
             </ul>
           </nav>
           <ul className="profile-list">
@@ -51,7 +57,7 @@ const Header = () => {
             <li className="list-icons">
               <img src={notification} alt="" />
             </li>
-            <li className="list-icons">
+            <li className="list-ico0ns">
               <img src={profilePhoto} alt="" onClick={() => setOpenMenu(!openMenu)} />
               {
                 openMenu ? (
