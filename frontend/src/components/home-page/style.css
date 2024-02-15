@@ -128,17 +128,16 @@
 }
 
 .post__img {
-    width: 49rem;
+    max-width: 44rem;
 }
 
 .card-post__img {
     display: flex;
-    padding: 1.5625rem 1.5rem;
-}
-
-.card-post__statistics {
-    margin-left: 1.5rem;
-    display: flex;
+    padding: 1.5625rem 5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9375rem;
 }
 
 .post-analytics {

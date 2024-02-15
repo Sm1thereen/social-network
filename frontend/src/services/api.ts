@@ -3,12 +3,13 @@ import axios from 'axios';
 const API_BASE_URL = 'http://localhost:5000';
 
 export const registrationUser = async (
-  name: string,
+  firstName: string,
+  lastName: string,
   email: string,
-  password: string
+  password: string,
 ) => {
   try {
-    const data = JSON.stringify({name, email, password});
+    const data = JSON.stringify({firstName, lastName, email, password});
     console.log('data:', data);
     const response = await axios.post(`${API_BASE_URL}/auth/register`, data, {
       headers: {

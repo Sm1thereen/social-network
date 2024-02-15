@@ -63,7 +63,7 @@ const ReccomendAccount = () => {
             <button className="recommend__card__btn">Follow</button>
           </li>
         </ul>
-        <Link to="/" className="recommend__card__link">
+        <Link to="/follow" className="recommend__card__link">
           View all recommendations <img src={arrow} alt="" />{' '}
         </Link>
       </div>

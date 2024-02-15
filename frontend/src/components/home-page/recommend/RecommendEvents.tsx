@@ -61,11 +61,12 @@ const RecommendEvents: React.FC<{title: string}> = ({title}) => {
           </div>
         </li>
       </ul>
-      <Link to="/home" className="recommend__card__link">
+      <Link to="/events" className="recommend__card__link">
         View more <img src={arrow} alt="" />{' '}
       </Link>
     </div>
   );
 };
+
 
 export default RecommendEvents;

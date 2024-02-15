@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../assets/logo.svg';
 import {Link, useLocation} from 'react-router-dom';
 import './home-page/style.css';
 import search from '../assets/header/search.svg';
-import bookmark from '../assets/bookmark.svg';
-import notification from '../assets/header/notification.png';
+import bookmark from '../assets/header/bookmark.svg';
+import notification from '../assets/header/notification.svg';
 import profilePhoto from '../assets/header/woman.png';
+import exitSession from '../services/exitSession';
 
 
 const Header = () => {
   const location = useLocation();
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <>
       <header className="header">
@@ -36,22 +39,36 @@ const Header = () => {
                   Events
                 </Link>
               </li>
+              <li className="page__item">
+                <Link to="/profile"
+                      className={`page__link ${location.pathname === '/profile' ? 'page__link--active' : ''}`}>
+                  Profile
+                </Link>
+              </li>
             </ul>
           </nav>
           <ul className="profile-list">
             <li className="list-icons">
-              <img className="header-icons" src={search} alt="" />
+              <img src={search} alt="" />
             </li>
             <li className="list-icons">
               <img src={bookmark} alt="" />
             </li>
             <li className="list-icons">
-              <img className="header-icons" src={notification} alt="" />
+              <img src={notification} alt="" />
             </li>
-            <li className="list-icons">
-              <img src={profilePhoto} alt="" />
+            <li className="list-ico0ns">
+              <img src={profilePhoto} alt="" onClick={() => setOpenMenu(!openMenu)} />
+              {
+                openMenu ? (
+                  <div className="logout">
+                    <Link to="/" onClick={() => exitSession()}>Logout</Link>
+                  </div>
+                ) : ('')
+              }
             </li>
           </ul>
+
         </div>
       </header>
     </>

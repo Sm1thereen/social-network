@@ -7,6 +7,7 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {ILogin} from '../../interfaces/interfaces';
 import {loginUser} from '../../services/api';
 import setAccessToken from '../../services/setAccessToken';
+import {useNavigate} from 'react-router-dom';
 
 const LoginShema = zod.object({
   email: zod.string().email(),
@@ -14,10 +15,12 @@ const LoginShema = zod.object({
 });
 
 export default function HeaderLogin() {
+  const navigate = useNavigate();
   const onSumbit = async (data: ILogin) => {
     try {
       const response = await loginUser(data.email, data.password);
       await setAccessToken(response);
+      navigate('/home');
     } catch (error) {
       console.error('Error', error);
     }
@@ -48,26 +51,16 @@ export default function HeaderLogin() {
               >
                 <input
                   type="text"
-                  className="login__email input-login"
+                  className={`login__email input-login ${errors.email ? 'error-input' : ''}`}
                   placeholder="Email"
                   {...register('email')}
                 />
-                {errors.email && (
-                  <p style={{color: 'red', fontWeight: '500'}}>
-                    {errors.email.message}
-                  </p>
-                )}
                 <input
-                  type="text"
-                  className="login__password input-login"
+                  type="password"
+                  className={`login__password input-login ${errors.password ? 'error-input' : ''}`}
                   placeholder="Password"
                   {...register('password')}
                 />
-                {errors.password && (
-                  <p style={{color: 'red', fontWeight: '500'}}>
-                    Password 6 between 48 symbols
-                  </p>
-                )}
                 <button className="login__button" type="submit">
                   Login
                 </button>
