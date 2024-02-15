@@ -36,8 +36,6 @@ const CardInfoPost = () => {
       </div>
       <div className="card-post__img">
         <img className="post__img" src={testPost} alt="" />
-      </div>
-      <div className="card-post__statistics">
         <ul className="post-analytics">
           <li className="post-analytics__item">
             <img src={like} alt="" />

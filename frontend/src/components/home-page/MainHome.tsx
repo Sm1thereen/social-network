@@ -50,7 +50,9 @@ const MainHome = () => {
                   )}
                 />
               </div>
-              <CardPost />
+              <div className="card-post__wrapper">
+                <CardPost />
+              </div>
             </div>
             <div className="recomend__wrapper">
               <RecommendAccount />
