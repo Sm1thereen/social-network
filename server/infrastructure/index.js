@@ -1,8 +1,7 @@
-import {userSchema} from './schemas/userSchema';
+import {userSchema} from './schemas/userSchema.js';
+import {Sequelize} from 'sequelize';
 
-const {Sequilize} = require('sequelize');
-
-const sequelize = new Sequilize('social_network', 'postgres', 'postgres', {
+const sequelize = new Sequelize('social_network', 'postgres', 'postgres', {
   host: 'localhost',
   dialect: 'postgres',
 });
@@ -15,7 +14,7 @@ try {
 }
 
 export const UserModel = sequelize.define('User', userSchema, {
-  tableName: 'users',
+  tableName: 'Users',
 });
 
 await sequelize.sync();

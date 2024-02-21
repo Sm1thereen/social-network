@@ -1,4 +1,4 @@
-const DataTypes = require('sequelize');
+import {DataTypes} from 'sequelize';
 
 export const userSchema = {
   id: {
@@ -6,17 +6,17 @@ export const userSchema = {
     autoIncrement: true,
     primaryKey: true,
   },
-  email: {
-    type: DataTypes.TEXT,
-    unique: true,
-  },
   first_name: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
   },
   last_name: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
+  },
+  email: {
+    type: DataTypes.STRING,
+    unique: true,
   },
   password: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
   },
 };
