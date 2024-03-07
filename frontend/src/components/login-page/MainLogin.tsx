@@ -26,6 +26,7 @@ export default function MainLogin() {
         data.password,
       );
       await setAccessToken(response);
+      console.log(response);
       navigate('/home');
     } catch (error) {
       console.error('Error', error);

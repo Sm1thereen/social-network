@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import profileImg from '../../assets/profile/profileImg.jpg';
 import './style.css';
 import Following from '../follow-page/follow/Following';
 import Followers from '../follow-page/follow/Followers';
 import CardPost from '../home-page/post-card/CardPost';
+import {getUserById} from '../../services/api';
+import getHeader from '../../services/getHeader';
+import {IUser} from '../../interfaces/interfaces';
+
 
 const MainProfile = () => {
   const [page, setPage] = useState<'posts' | 'following' | 'followers'>('posts');
-  const [isFollow, setIsFollow] = useState(true);
+  const [dataUser, setDataUser] = useState<IUser | null>({firstName: '', lastName: ''});
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const headerProps = await getHeader();
+      if (headerProps !== undefined) {
+        setDataUser(headerProps);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <section className="profile-page">
@@ -17,7 +30,7 @@ const MainProfile = () => {
             <div className="header__info">
               <img src={profileImg} alt="" className="profile__header__img" />
               <div className="header__info__contact">
-                <h1 className="header__title">Vishnu Kumar Agrawal</h1>
+                <h1 className="header__title">{dataUser?.firstName} {dataUser?.lastName}</h1>
                 <p className="header__job">Ux Designer at Divim Technology</p>
                 <p className="header__location">Jaipur, India</p>
               </div>

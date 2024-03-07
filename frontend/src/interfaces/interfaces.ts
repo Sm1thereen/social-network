@@ -11,6 +11,13 @@ export interface IRegistration {
 }
 
 export interface IToken {
-  accessToken: string;
-  refreshToken: string;
+  token: {
+    accessToken: string;
+    refreshToken: string;
+  };
+}
+
+export interface IUser {
+  firstName: string;
+  lastName: string;
 }
