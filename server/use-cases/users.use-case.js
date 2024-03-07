@@ -13,11 +13,9 @@ const generateRefreshToken = (userId) => {
 };
 
 export class UsersUseCase {
-
   constructor({userRepository}) {
     this.userRepository = userRepository;
   }
-
 
   createUser = async ({first_name, last_name, email, password}) => {
     const user = await this.userRepository.createUser({
@@ -28,13 +26,25 @@ export class UsersUseCase {
     }
     const accessToken = generateAccessToken(user.id);
     const refreshToken = generateRefreshToken(user.id);
-
+    await this.userRepository.userUpdate(user, {refreshToken});
     return {accessToken, refreshToken};
   };
   userLogin = async ({email, password}) => {
-    const user = await this.userRepository.userLogin({email, password});
-    return jwt.sign({userId: user.id}, process.env.JWT_SECRET, {
-      expiresIn: `${process.env.JWT_EXPIRATION_TIME}s`,
-    });
+    const user = await this.userRepository.getUser({email, password});
+    if (!user) {
+      throw new Error('User not found');
+    }
+    const accessToken = generateAccessToken(user.id);
+    const refreshToken = generateAccessToken(user.id);
+    return {accessToken, refreshToken};
+  };
+  getUserById = async ({userId}) => {
+    const user = await this.userRepository.getUserById({userId});
+    if (!user) {
+      return null;
+    }
+    return user.unmarshal();
   };
 }
+
+

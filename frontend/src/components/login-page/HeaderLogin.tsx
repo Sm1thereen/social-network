@@ -20,6 +20,7 @@ export default function HeaderLogin() {
     try {
       const response = await loginUser(data.email, data.password);
       await setAccessToken(response);
+      console.log('test');
       navigate('/home');
     } catch (error) {
       console.error('Error', error);

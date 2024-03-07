@@ -6,8 +6,9 @@ export class Server {
   _commonPrefix = '/api';
   _defaultPort = 5000;
 
-  constructor({usersRouter}) {
+  constructor({usersRouter, postsRouter}) {
     this.usersRouter = usersRouter;
+    this.postsRouter = postsRouter;
   }
 
   start = () => {
@@ -21,6 +22,7 @@ export class Server {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(`${this._commonPrefix}/v1`, this.usersRouter.init());
+    app.use(`${this._commonPrefix}/`, this.postsRouter.init());
 
     if (!process.env.APP_PORT) {
       console.log(

@@ -19,4 +19,7 @@ export const userSchema = {
   password: {
     type: DataTypes.STRING,
   },
+  refreshToken: {
+    type: DataTypes.STRING,
+  },
 };
