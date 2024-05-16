@@ -102,8 +102,7 @@ h6 {
 
 [class*="__container"] {
     max-width: 1140px;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding: 0 15px;
     margin: 0 auto;
 }
 
@@ -111,8 +110,8 @@ body {
     font-family: 'Figtree', sans-serif;
 }
 
-.content {
-    height: 100vh;
+.p-1 {
+    font-size: 16px;
 }
 
 .main-content {
@@ -123,4 +122,8 @@ body {
 
 .error-input {
     box-shadow: 0 0 0.3125rem red;
+}
+
+.error-text {
+    color: red;
 }

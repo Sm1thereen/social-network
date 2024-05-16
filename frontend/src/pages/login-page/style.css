@@ -1,0 +1,134 @@
+/* Header */
+.header-login {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 15;
+    height: 6rem;
+    align-items: center;
+    background-color: #f3f3f3;
+
+}
+
+.header-login__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.form__login {
+    display: flex;
+    column-gap: 1.25rem;
+}
+
+.login__input {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.input-login {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 0.3125rem;
+    padding-left: 0.625rem;
+}
+
+.input-login:focus {
+    box-shadow: 0 0 0.3125rem #0BAACA;
+}
+
+.login__button {
+    display: flex;
+    padding: 0.625rem 1.625rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #0BAACA;
+    color: #fff;
+    border-radius: 0.375rem;
+    box-shadow: 0rem 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: all 1s;
+}
+
+.login__button:hover {
+    background-color: #35c7e4;
+    color: #000;
+}
+
+/* Main */
+.login__page {
+    width: 100%;
+    background-image: url('../../assets/login/bg.jpg');
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: darken;
+}
+
+.registration-section__container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    gap: 7.5rem;
+    align-items: center;
+    height: 69rem;
+}
+
+.registration-section__content {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: end;
+}
+
+.title__registration {
+    color: #CBCBCB;
+    font-family: 'Figtree', sans-serif;
+    font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.625rem;
+    letter-spacing: -0.0625rem;
+}
+
+/* Form */
+
+.authorization-section__form {
+    height: auto;
+    width: 350px;
+    background-color: #f3f3f3;
+    border: 0.0625rem solid;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+}
+
+.registration__form {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.form__title {
+    color: black;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.125rem;
+    letter-spacing: -0.6px;
+    margin-bottom: 0.9375rem;
+}
+
+
+/* //Form */

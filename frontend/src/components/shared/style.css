@@ -1,0 +1,28 @@
+/*  Button*/
+.authorization__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #1C836D;
+    font-weight: bold;
+    transition: all 0.5s;
+    color: #fff;
+}
+
+.authorization__btn:hover {
+    background-color: #2e796a;
+    color: rgb(145, 141, 141);
+}
+
+/*  Input   */
+.input-registration {
+    height: 32px;
+    width: 270px;
+    padding: 0px 14px;
+    border-radius: 0.3125rem;
+}
+
+.input-registration:focus {
+    box-shadow: 0 0 0.3125rem #1C836D;
+}

@@ -1,23 +1,27 @@
-export interface ILogin {
+export interface Login {
   email: string;
   password: string;
 }
 
-export interface IRegistration {
+export interface Registration {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
 }
 
-export interface IToken {
+export interface Token {
   token: {
     accessToken: string;
     refreshToken: string;
   };
 }
 
-export interface IUser {
+export interface User {
   firstName: string;
   lastName: string;
+}
+
+export interface AuthorizationProps {
+  toggleForm: () => void;
 }
