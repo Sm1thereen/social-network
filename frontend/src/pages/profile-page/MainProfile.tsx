@@ -4,22 +4,25 @@ import './style.css';
 import Following from '../follow-page/follow/Following';
 import Followers from '../follow-page/follow/Followers';
 import CardPost from '../home-page/post-card/CardPost';
-import getHeader from '../../services/getHeader';
 import {User} from '../../interfaces/interfaces';
+import {getDataRequest, getUserById} from '../../services/api';
 
 
 const MainProfile = () => {
   const [page, setPage] = useState<'posts' | 'following' | 'followers'>('posts');
-  const [dataUser, setDataUser] = useState<User | null>({firstName: '', lastName: ''});
+  const [dataUser, setDataUser] = useState<User | null>({first_name: '', last_name: ''});
 
   useEffect(() => {
-    const fetchData = async () => {
-      const headerProps = await getHeader();
-      if (headerProps !== undefined) {
-        setDataUser(headerProps);
+    const fetchDataUser = async () => {
+      const user = await getUserById();
+      const posts = await getDataRequest(`/api/posts/${user.id}`);
+      if (user) {
+        setDataUser(user);
+        console.log('dataUser', user);
+        console.log('posts:', posts);
       }
     };
-    fetchData();
+    fetchDataUser();
   }, []);
   return (
     <>
@@ -29,7 +32,7 @@ const MainProfile = () => {
             <div className="header__info">
               <img src={profileImg} alt="" className="profile__header__img" />
               <div className="header__info__contact">
-                <h1 className="header__title">{dataUser?.firstName} {dataUser?.lastName}</h1>
+                <h1 className="header__title">{dataUser?.first_name} {dataUser?.last_name}</h1>
                 <p className="header__job">Ux Designer at Divim Technology</p>
                 <p className="header__location">Jaipur, India</p>
               </div>

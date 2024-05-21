@@ -18,8 +18,8 @@ export interface Token {
 }
 
 export interface User {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
 }
 
 export interface AuthorizationProps {

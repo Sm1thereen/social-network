@@ -9,12 +9,13 @@ const CardPost: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       const posts = await getDataRequest('/api/posts');
-      console.log(posts.data);
       if (Array.isArray(posts.data)) {
-        setPosts(posts.data);
+        const reverseData = posts.data.reverse();
+        setPosts(reverseData);
       }
     };
     getData();
+    console.log('posts:', posts);
   }, []);
 
   return (

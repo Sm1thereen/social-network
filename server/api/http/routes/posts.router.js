@@ -12,7 +12,15 @@ export class PostsRouter {
       '/posts',
       authMiddleware,
       asyncHandlerWrapperUtil(this.postsController.createPost),
+    ).get(
+      '/posts/:postId',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.postsController.getPostsByUserId),
+    ).get(
+      '/posts',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.postsController.getAllPosts),
     );
   };
-
 }
+

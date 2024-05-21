@@ -38,6 +38,7 @@ export class UsersUseCase {
     const refreshToken = generateAccessToken(user.id);
     return {accessToken, refreshToken};
   };
+
   getUserById = async ({userId}) => {
     const user = await this.userRepository.getUserById({userId});
     if (!user) {

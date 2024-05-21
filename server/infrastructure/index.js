@@ -1,7 +1,6 @@
 import {userSchema} from './schemas/userSchema.js';
 import {Sequelize} from 'sequelize';
 import {postSchema} from './schemas/postSchema.js';
-import {User} from '../domain/user.js';
 
 const sequelize = new Sequelize('social_network', 'postgres', 'postgres', {
   host: 'localhost',

@@ -63,7 +63,6 @@ export const createPost = async (text: string) => {
   }
 };
 export const getUserById = async () => {
-
   const authToken = localStorage.getItem('accessToken');
   try {
     if (!authToken) {

@@ -17,7 +17,7 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
         <div className="card-user__info">
           <h2 className="card-user__name">Vishnu Kumar Agrawal</h2>
           <p className="card-user__job">Ux Designer at Divim Technology</p>
-          <p className="card-data__card">25 Nov at 12:24 PM</p>
+          <p className="card-user__data">25 Nov at 12:24 PM</p>
         </div>
       </div>
       <div className="card-post__text">

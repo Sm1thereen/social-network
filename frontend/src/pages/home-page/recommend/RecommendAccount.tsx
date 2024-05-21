@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import recommend from '../../../assets/home/recommend/recommend.jpg';
+import recommend from '../../../assets/home/recommend/recommend.png';
 import arrow from '../../../assets/home/recommend/arrow-right.svg';
+import RecommendUserCard from '../../../components/cards/RecommendUserCard';
 
-const ReccomendAccount = () => {
+const RecommendAccount = () => {
   return (
     <>
       <div className="recommend__people recommend-card">
@@ -11,57 +12,9 @@ const ReccomendAccount = () => {
           People you might know
         </h2>
         <ul className="recommend__card">
-          <li className="recommend__card__item">
-            <div className="recommend__card__user">
-              <img src={recommend} alt="" />
-              <div className="recommend__card__info">
-                <h2 className="user__name recommend__card__text">
-                  Vishnu Kumar Agrawal
-                </h2>
-                <p className="user__job recommend__card__text">
-                  Ux Designer at Divim Technology
-                </p>
-                <p className="data__card recommend__card__text">
-                  25 Nov at 12:24 PM
-                </p>
-              </div>
-            </div>
-            <button className="recommend__card__btn">Follow</button>
-          </li>
-          <li className="recommend__card__item">
-            <div className="recommend__card__user">
-              <img src={recommend} alt="" />
-              <div className="recommend__card__info">
-                <h2 className="user__name recommend__card__text">
-                  Vishnu Kumar Agrawal
-                </h2>
-                <p className="user__job recommend__card__text">
-                  Ux Designer at Divim Technology
-                </p>
-                <p className="data__card recommend__card__text">
-                  25 Nov at 12:24 PM
-                </p>
-              </div>
-            </div>
-            <button className="recommend__card__btn">Follow</button>
-          </li>
-          <li className="recommend__card__item">
-            <div className="recommend__card__user">
-              <img src={recommend} alt="" />
-              <div className="recommend__card__info">
-                <h2 className="user__name recommend__card__text">
-                  Vishnu Kumar Agrawal
-                </h2>
-                <p className="user__job recommend__card__text">
-                  Ux Designer at Divim Technology
-                </p>
-                <p className="data__card recommend__card__text">
-                  25 Nov at 12:24 PM
-                </p>
-              </div>
-            </div>
-            <button className="recommend__card__btn">Follow</button>
-          </li>
+          <RecommendUserCard />
+          <RecommendUserCard />
+          <RecommendUserCard />
         </ul>
         <Link to="/follow" className="recommend__card__link">
           View all recommendations <img src={arrow} alt="" />{' '}
@@ -71,4 +24,4 @@ const ReccomendAccount = () => {
   );
 };
 
-export default ReccomendAccount;
+export default RecommendAccount;

@@ -5,10 +5,30 @@ export class PostRepository {
   createPost = async ({text, userId}) => {
     try {
       const post = await PostModel.create({text, user_id: userId});
-      console.log('userIdRepo', userId);
       return await PostRepository.toDomain(post);
     } catch (error) {
       console.error('Error creating post', error);
+    }
+  };
+  getPostById = async ({userId}) => {
+    try {
+      const posts = await PostModel.findAll({where: {user_id: userId}});
+      if (!posts || posts.length === 0) {
+        return null;
+      }
+      return await Promise.all(posts.map(post => PostRepository.toDomain(post)));
+    } catch (error) {
+      console.error('Error getting posts by userId', error);
+      throw error;
+    }
+  };
+
+  getAllPosts = async () => {
+    try {
+      const posts = await PostModel.findAll();
+      return await Promise.all(posts.map(PostRepository.toDomain));
+    } catch (error) {
+      console.error('Error getting all posts', error);
     }
   };
 
@@ -16,7 +36,7 @@ export class PostRepository {
     return Post.create({
       id: postModel.id,
       text: postModel.text,
-      userId: postModel.userId,
+      userId: postModel.user_id,
     });
   };
 }

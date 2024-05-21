@@ -2,10 +2,11 @@ export class Post {
   #_id;
   #_props;
 
-  constructor({id, text}) {
+  constructor({id, text, userId}) {
     this.#_id = id;
     this.#_props = {
       text,
+      userId,
     };
   }
 
@@ -16,14 +17,16 @@ export class Post {
   static create = ({
                      id,
                      text,
+                     userId,
                    }) => {
-    return new Post({id, text});
+    return new Post({id, text, userId});
   };
 
   unmarshal = () => {
     return {
       id: this.#_id,
       text: this.#_props.text,
+      userId: this.#_props.userId,
     };
   };
 }
