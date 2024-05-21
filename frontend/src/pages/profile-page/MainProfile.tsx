@@ -63,7 +63,6 @@ const MainProfile = () => {
                 page === 'posts' &&
                 <div className="posts__content">
                   <CardPost />
-                  <CardPost />
                 </div>
               }
               <div className="follow__content">

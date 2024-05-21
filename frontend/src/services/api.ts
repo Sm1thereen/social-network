@@ -1,46 +1,42 @@
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:5000';
+const authToken = localStorage.getItem('accessToken');
 
-export const registrationUser = async (
-  first_name: string,
-  last_name: string,
-  email: string,
-  password: string,
+export const postDataRequest = async (
+  formData: {},
+  url: string,
+  contentType: 'application/json' | 'multipart/form-data' = 'application/json',
 ) => {
   try {
-    const data = JSON.stringify({first_name, last_name, email, password});
-    console.log('data:', data);
-    const response = await axios.post(`${API_BASE_URL}/api/v1/registration`, data, {
+    const data = JSON.stringify(formData);
+    const response = await axios.post(`${API_BASE_URL}${url}`, data, {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`,
+        'Content-Type': contentType,
       },
     });
-    return response.data.token;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
-export const loginUser = async (email: string, password: string) => {
-  try {
-    const data = JSON.stringify({
-      email,
-      password,
-    });
-    console.log('data', data);
-    const response = await axios.post(`${API_BASE_URL}/api/v1/login`, data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (response.status === 200) {
-      console.log('Login successfully', response.data.token);
-    } else {
-      console.error('Login failed', response.status, response.data);
-    }
+    console.log('response', response.data);
     return response.data;
   } catch (error) {
-    console.error('Error:', error);
+    console.error('error', error);
+  }
+};
+export const getDataRequest = async (url: string) => {
+  try {
+    if (!authToken) {
+      console.error('AccessToken not found');
+      return;
+    }
+    const response = await axios.get(`${API_BASE_URL}${url}`, {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('error', error);
   }
 };
 

@@ -16,7 +16,7 @@ const Header = () => {
     <>
       <header className="header">
         <div className="header__container">
-          <Link to="/home">
+          <Link to={`${accessToken ? '/home' : ''}`}>
             <img src={logo} alt="" />
           </Link>
           {

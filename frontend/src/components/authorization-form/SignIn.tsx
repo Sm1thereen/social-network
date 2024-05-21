@@ -1,25 +1,22 @@
 import React from 'react';
 import Input from '../shared/Input';
-import {AuthorizationProps, Registration} from '../../interfaces/interfaces';
-import {registrationUser} from '../../services/api';
+import {AuthorizationProps, Login} from '../../interfaces/interfaces';
+import {postDataRequest} from '../../services/api';
 import setAccessToken from '../../services/setAccessToken';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {RegistrationShema} from '../../validationSchema/schema';
+import {LoginSchema} from '../../validationSchema/schema';
 import Button from '../shared/Button';
+import {useNavigate} from 'react-router-dom';
 
 
 const SignIn: React.FC<AuthorizationProps> = ({toggleForm}) => {
-  const onSumbit = async (data: Registration) => {
+  const navigate = useNavigate();
+  const onSubmit = async (data: Login) => {
     try {
-      const response = await registrationUser(
-        data.firstName,
-        data.lastName,
-        data.email,
-        data.password,
-      );
+      const response = await postDataRequest(data, '/api/v1/login');
       await setAccessToken(response);
-      console.log(response);
+      navigate('/home');
     } catch (error) {
       console.error('Error', error);
     }
@@ -28,8 +25,8 @@ const SignIn: React.FC<AuthorizationProps> = ({toggleForm}) => {
     register,
     handleSubmit,
     formState: {errors},
-  } = useForm<Registration>({
-    resolver: zodResolver(RegistrationShema),
+  } = useForm<Login>({
+    resolver: zodResolver(LoginSchema),
     mode: 'onBlur',
     reValidateMode: 'onChange',
     shouldFocusError: true,
@@ -39,15 +36,15 @@ const SignIn: React.FC<AuthorizationProps> = ({toggleForm}) => {
       <form
         action=""
         className="registration__form"
-        onSubmit={handleSubmit(onSumbit)}
+        onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="form__title">Sign In</h1>
+        <h1 className="form__title">Log In</h1>
         <Input name="email" register={register} error={errors.email} placeholder="Email" />
-        <Input name="password" error={errors.password} register={register} type="password"
+        <Input name="password" register={register} error={errors.password} typeText="password"
                placeholder="Password" />
-        <Button text="Log in" style="authorization__btn" padding={'12px 50px'} />
-        <p className="p-1"> Already have an account? <span
-          style={{color: '#1C836D', cursor: 'pointer', fontWeight: 700}} onClick={toggleForm}>Log in</span>
+        <Button text="Continue" style="authorization__btn" padding={'12px 50px'} type="submit" />
+        <p className="p-1"> Don't have an account? <span
+          style={{color: '#1C836D', cursor: 'pointer', fontWeight: 700}} onClick={toggleForm}>Sign up</span>
         </p>
       </form>
     </div>

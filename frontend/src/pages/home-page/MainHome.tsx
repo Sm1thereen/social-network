@@ -1,7 +1,6 @@
 import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import woman from '../../assets/home/cards/woman.png';
-
 import {zodResolver} from '@hookform/resolvers/zod';
 import zod from 'zod';
 import CardPost from './post-card/CardPost';

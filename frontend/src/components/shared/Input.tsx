@@ -9,6 +9,7 @@ interface InputProps {
   name?: string;
   error: FieldError | undefined;
   type?: string | InputType;
+  typeText?: string;
   value?: string;
   placeholder?: string;
   maxLength?: number;
@@ -38,7 +39,7 @@ const Input: React.FC<InputProps> = (props) => {
         id={props.name}
         name={props.name}
         className={`input-registration ${props.error ? 'error-input' : ''}`}
-        type="text"
+        type={props.typeText}
         {...props.register(props.name)}
         placeholder={props.placeholder ?? ''}
       />

@@ -14,13 +14,13 @@ function App() {
     <div className="App">
       <>
         <Router>
+          <Header />
           <Routes>
             <Route path="/" element={<MainLogin />} />
             {
               accessToken &&
               (
                 <>
-                  <Header />
                   <Route path="/home" element={<MainHome />} />
                   <Route path="/follow" element={<FollowMain />} />
                   <Route path="/events" element={<EventsMain />} />

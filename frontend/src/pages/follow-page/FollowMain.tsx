@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './style.css';
-import CardInfoUser from '../home-page/post-card/CardInfoUser';
 import Following from './follow/Following';
 import Followers from './follow/Followers';
 

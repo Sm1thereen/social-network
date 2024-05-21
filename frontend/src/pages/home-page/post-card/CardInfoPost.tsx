@@ -2,36 +2,29 @@ import React from 'react';
 import testPost from '../../../assets/home/cards/test-post.png';
 import like from '../../../assets/home/cards/like.svg';
 import bookmark from '../../../assets/header/bookmark.svg';
+import {Post} from '../../../interfaces/interfaces';
+import woman from '../../../assets/home/cards/woman.png';
 
-const CardInfoPost = () => {
+interface CardInfoPostProps {
+  post: Post;
+}
+
+const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
   return (
-    <>
+    <div className="card-news__post">
+      <div className="card-profile__info">
+        <img src={woman} alt="" />
+        <div className="card-user__info">
+          <h2 className="card-user__name">Vishnu Kumar Agrawal</h2>
+          <p className="card-user__job">Ux Designer at Divim Technology</p>
+          <p className="card-data__card">25 Nov at 12:24 PM</p>
+        </div>
+      </div>
       <div className="card-post__text">
         <p>
-          As the morning unfolds, the world awakens with a symphony of sights
-          and sounds. The sun, a radiant orb in the sky, casts its warm embrace
-          over the earth, illuminating everything it touches with a golden glow.
-          Birds take flight from their nests, their melodious songs filling the
-          air with joy and vitality. The gentle rustle of leaves in the breeze
-          creates a soothing backdrop to the bustling activity of the day. Each
-          moment is a testament to the beauty and resilience of nature, a
-          reminder that life is a precious gift to be cherished and savored. In
-          the midst of this natural splendor, one can't help but feel a sense of
-          wonder and gratitude. There is a quiet power in the simple act of
-          observing the world around us, of taking a moment to pause and
-          appreciate the beauty that surrounds us. It is in these moments of
-          stillness that we find clarity and peace, a respite from the chaos and
-          noise of everyday life. Yet, even as we revel in the beauty of the
-          present moment, we are mindful of the journey that lies ahead. Each
-          day presents us with new challenges and opportunities, each decision
-          shaping the course of our lives in ways both seen and unseen. It is up
-          to us to embrace these challenges with courage and determination, to
-          seize the opportunities that come our way with open hearts and open
-          minds. So let us greet each day with a spirit of adventure and
-          curiosity, knowing that each moment is a chance to learn, to grow, and
-          to become the best version of ourselves. For in the end, it is not the
-          destination that matters, but the journey itself – a journey filled
-          with beauty, wonder, and infinite possibility.
+          {
+            props.post.text
+          }
         </p>
       </div>
       <div className="card-post__img">
@@ -46,7 +39,7 @@ const CardInfoPost = () => {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 export default CardInfoPost;

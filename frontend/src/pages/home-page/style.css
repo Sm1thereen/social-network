@@ -99,32 +99,41 @@
 
 /* Card-post */
 .card-post__wrapper {
-    background-color: #fff;
     width: 90%;
-    height: auto;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.card-news__post {
+    padding: 24px;
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.08);
-    border-radius: 0.9375rem;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .card-profile__info {
-    padding: 1.5rem 1.5rem 0 1.5rem;
     display: flex;
+    width: auto;
+    align-items: center;
+    gap: 8px
 }
 
 .card__info {
-    margin-top: 0.625rem;
-    margin-left: 0.3125rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4375rem;
+    gap: 6px;
 }
 
-.user__name {
+.card-user__name {
     font-size: 1rem;
     font-weight: 600;
 }
 
-.user__job {
+.card-user__job {
     color: #807e7e;
 }
 
@@ -134,8 +143,7 @@
 
 .card-post__text {
     color: #3E3E59;
-    padding: 1.5rem 1.5rem 0 1.5rem;
-    font-size: 1rem;
+    margin-top: 16px;
     line-height: 1.5;
 }
 

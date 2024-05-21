@@ -4,8 +4,8 @@ export interface Login {
 }
 
 export interface Registration {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 }
@@ -24,4 +24,9 @@ export interface User {
 
 export interface AuthorizationProps {
   toggleForm: () => void;
+}
+
+export interface Post {
+  id: number;
+  text: string;
 }
