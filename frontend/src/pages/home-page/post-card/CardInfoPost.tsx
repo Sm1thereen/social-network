@@ -1,23 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import testPost from '../../../assets/home/cards/test-post.png';
 import like from '../../../assets/home/cards/like.svg';
 import bookmark from '../../../assets/header/bookmark.svg';
 import {Post} from '../../../interfaces/interfaces';
 import woman from '../../../assets/home/cards/woman.png';
+import {formatDate} from '../../../services/utils';
 
 interface CardInfoPostProps {
   post: Post;
 }
 
 const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
+  const [formattedDate, setFormattedDate] = useState<string>();
+
+  useEffect(() => {
+    const fetchFormattedDate = async () => {
+      try {
+        const date = await formatDate(props.post.createdAt);
+        setFormattedDate(date);
+      } catch (error) {
+        console.error('Error formatting date:', error);
+      }
+    };
+    fetchFormattedDate();
+  }, [props.post.createdAt]);
+
+
   return (
     <div className="card-news__post">
       <div className="card-profile__info">
         <img src={woman} alt="" />
         <div className="card-user__info">
-          <h2 className="card-user__name">Vishnu Kumar Agrawal</h2>
+          <h2 className="card-user__name">{props.post.user.first_name + ' ' + props.post.user.last_name}</h2>
           <p className="card-user__job">Ux Designer at Divim Technology</p>
-          <p className="card-user__data">25 Nov at 12:24 PM</p>
+          <p className="card-user__data">{formattedDate}</p>
         </div>
       </div>
       <div className="card-post__text">

@@ -5,7 +5,7 @@ import search from '../../assets/header/search.svg';
 import bookmark from '../../assets/header/bookmark.svg';
 import notification from '../../assets/header/notification.svg';
 import profilePhoto from '../../assets/header/woman.png';
-import exitSession from '../../services/exitSession';
+import {exitSession} from '../../services/utils';
 
 
 const Header = () => {

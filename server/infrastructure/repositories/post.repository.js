@@ -25,7 +25,7 @@ export class PostRepository {
 
   getAllPosts = async () => {
     try {
-      const posts = await PostModel.findAll();
+      const posts = await PostModel.findAll({include: 'user'});
       return await Promise.all(posts.map(PostRepository.toDomain));
     } catch (error) {
       console.error('Error getting all posts', error);
@@ -36,7 +36,8 @@ export class PostRepository {
     return Post.create({
       id: postModel.id,
       text: postModel.text,
-      userId: postModel.user_id,
+      createdAt: postModel.createdAt,
+      user: postModel.user,
     });
   };
 }

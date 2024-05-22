@@ -29,4 +29,6 @@ export interface AuthorizationProps {
 export interface Post {
   id: number;
   text: string;
+  createdAt: string;
+  user: User;
 }
