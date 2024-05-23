@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import {getDataRequest} from '../../services/api';
+import {Post} from '../../interfaces/interfaces';
 import CardInfoPost from './CardInfoPost';
-import {getDataRequest} from '../../../services/api';
-import {Post} from '../../../interfaces/interfaces';
 
 const CardPost: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
