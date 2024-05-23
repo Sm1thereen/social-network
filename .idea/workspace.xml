@@ -5,36 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8b797ea-bef7-48cd-b426-d6f406f37714" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/10.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/11.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/12.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/13.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/14.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/15.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/17.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/17.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/18.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/18.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/19.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/19.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/4.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/5.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/6.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/6.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/8.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/interfaces/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/interfaces/interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home-page/post-card/CardInfoPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home-page/post-card/CardInfoPost.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/exitSession.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/getHeader.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/domain/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/infrastructure/repositories/post.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repositories/post.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/follow-page/follow/Followers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/follow-page/follow/Followers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/follow-page/follow/Following.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/follow-page/follow/Following.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home-page/MainHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home-page/MainHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home-page/post-card/CardInfoPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/CardInfoPost.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home-page/post-card/CardInfoUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/CardInfoUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home-page/post-card/CardPost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/CardPostHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile-page/MainProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile-page/MainProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/http/controllers/posts.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/http/controllers/posts.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/http/controllers/users.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/http/controllers/users.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/http/middlewares/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/http/middlewares/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/http/routes/posts.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/http/routes/posts.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/http/routes/users.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/http/routes/users.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/infrastructure/repositories/user.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repositories/user.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/use-cases/users.use-case.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/use-cases/users.use-case.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,11 +155,11 @@
       <recent name="$PROJECT_DIR$/frontend/src/assets/header" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components/cards" />
       <recent name="$PROJECT_DIR$/frontend/src/components/authorization-form" />
       <recent name="$PROJECT_DIR$/frontend/src/components/header" />
       <recent name="$PROJECT_DIR$/frontend/src/pages" />
       <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/server/api/http" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -190,7 +202,8 @@
       <workItem from="1716201512260" duration="438000" />
       <workItem from="1716202165883" duration="14087000" />
       <workItem from="1716270785673" duration="17848000" />
-      <workItem from="1716357274142" duration="1079000" />
+      <workItem from="1716357274142" duration="19364000" />
+      <workItem from="1716444079474" duration="7092000" />
     </task>
     <servers />
   </component>

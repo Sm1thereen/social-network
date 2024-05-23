@@ -1,5 +1,5 @@
 import React from 'react';
-import woman from '../../../assets/home/cards/woman.png';
+import woman from '../../assets/home/cards/woman.png';
 
 const CardInfoUser = () => {
   return (

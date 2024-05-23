@@ -18,6 +18,7 @@ export interface Token {
 }
 
 export interface User {
+  id?: number;
   first_name: string;
   last_name: string;
 }
@@ -32,3 +33,13 @@ export interface Post {
   createdAt: string;
   user: User;
 }
+
+export interface CardInfoPostProps {
+  post: Post;
+}
+
+export interface CardPostProfileProps {
+  post: Post;
+  user: User | null;
+}
+

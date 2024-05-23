@@ -9,13 +9,13 @@ export class PostsController {
   };
   getPostsByUserId = async (req, res) => {
     try {
-      const posts = await this.postsUseCase.getPostsByUserId({userId: req.user.id});
+      const posts = await this.postsUseCase.getPostsByUserId({userId: req.params.userId});
       res.json({data: posts, status: 1});
     } catch (error) {
       res.status(500).json({error: error.message});
     }
   };
-  
+
   getAllPosts = async (req, res) => {
     try {
       const posts = await this.postsUseCase.getAllPosts();

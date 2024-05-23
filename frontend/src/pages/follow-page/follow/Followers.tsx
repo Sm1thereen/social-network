@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CardInfoUser from '../../home-page/post-card/CardInfoUser';
+import CardInfoUser from '../../../components/cards/CardInfoUser';
 
 const Followers = () => {
   const [isFollow, setIsFollow] = useState(true);

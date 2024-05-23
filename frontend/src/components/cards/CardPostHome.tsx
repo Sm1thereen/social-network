@@ -1,9 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {getDataRequest} from '../../services/api';
-import {Post} from '../../interfaces/interfaces';
+import {Post, User} from '../../interfaces/interfaces';
 import CardInfoPost from './CardInfoPost';
 
-const CardPost: React.FC = () => {
+interface CardPostHomeProps {
+  user?: User | null;
+}
+
+const CardPostHome: React.FC = ({user}: CardPostHomeProps) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -29,4 +33,4 @@ const CardPost: React.FC = () => {
   );
 };
 
-export default CardPost;
+export default CardPostHome;

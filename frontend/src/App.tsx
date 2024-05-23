@@ -16,17 +16,20 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path="/" element={<MainLogin />} />
             {
-              accessToken &&
-              (
-                <>
-                  <Route path="/home" element={<MainHome />} />
-                  <Route path="/follow" element={<FollowMain />} />
-                  <Route path="/events" element={<EventsMain />} />
-                  <Route path="/profile" element={<MainProfile />} />
-                </>
-              )
+              accessToken ?
+                (
+                  <>
+                    <Route path="/home" element={<MainHome />} />
+                    <Route path="/follow" element={<FollowMain />} />
+                    <Route path="/events" element={<EventsMain />} />
+                    <Route path="/profile/:id" element={<MainProfile />} />
+                  </>
+                ) : (
+                  <>
+                    <Route path="/" element={<MainLogin />} />
+                  </>
+                )
             }
           </Routes>
         </Router>

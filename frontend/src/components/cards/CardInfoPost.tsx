@@ -1,14 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import testPost from '../../../assets/home/cards/test-post.png';
-import like from '../../../assets/home/cards/like.svg';
-import bookmark from '../../../assets/header/bookmark.svg';
-import {Post} from '../../../interfaces/interfaces';
-import woman from '../../../assets/home/cards/woman.png';
-import {formatDate} from '../../../services/utils';
+import testPost from '../../assets/home/cards/test-post.png';
+import like from '../../assets/home/cards/like.svg';
+import bookmark from '../../assets/header/bookmark.svg';
+import {CardInfoPostProps, Post} from '../../interfaces/interfaces';
+import woman from '../../assets/home/cards/woman.png';
+import {formatDate} from '../../services/utils';
+import {Link} from 'react-router-dom';
 
-interface CardInfoPostProps {
-  post: Post;
-}
 
 const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
   const [formattedDate, setFormattedDate] = useState<string>();
@@ -25,13 +23,14 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
     fetchFormattedDate();
   }, [props.post.createdAt]);
 
-
   return (
     <div className="card-news__post">
       <div className="card-profile__info">
         <img src={woman} alt="" />
         <div className="card-user__info">
-          <h2 className="card-user__name">{props.post.user.first_name + ' ' + props.post.user.last_name}</h2>
+          <Link to={`/profile/${props.post.user.id}`}>
+            <h2 className="card-user__name">{props.post.user.first_name + ' ' + props.post.user.last_name}</h2>
+          </Link>
           <p className="card-user__job">Ux Designer at Divim Technology</p>
           <p className="card-user__data">{formattedDate}</p>
         </div>

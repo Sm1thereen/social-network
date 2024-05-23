@@ -34,9 +34,10 @@ export const getDataRequest = async (url: string) => {
         'Content-Type': 'application/json',
       },
     });
+    console.log(`response - ${url}`, response);
     return response.data;
-  } catch (error) {
-    console.error('error', error);
+  } catch (error: any) {
+    console.log('Error message', error?.message);
   }
 };
 

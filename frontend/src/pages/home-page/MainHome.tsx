@@ -3,7 +3,7 @@ import {Controller, useForm} from 'react-hook-form';
 import woman from '../../assets/home/cards/woman.png';
 import {zodResolver} from '@hookform/resolvers/zod';
 import zod from 'zod';
-import CardPost from './post-card/CardPost';
+import CardPostHome from '../../components/cards/CardPostHome';
 import RecommendAccount from './recommend/RecommendAccount';
 import RecommendEvents from './recommend/RecommendEvents';
 import {createPost} from '../../services/api';
@@ -61,7 +61,7 @@ const MainHome = () => {
               <button className="create__post__btn" type="submit">Public</button>
             </form>
             <div className="card-post__wrapper">
-              <CardPost />
+              <CardPostHome />
             </div>
           </div>
           <div className="recomend__wrapper">
