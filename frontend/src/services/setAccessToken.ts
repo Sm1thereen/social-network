@@ -1,6 +1,6 @@
-import {IToken} from '../interfaces/interfaces';
+import {Token} from '../interfaces/interfaces';
 
-export default async function setAccessToken(data: IToken) {
+export default async function setAccessToken(data: Token) {
   if (data.token.accessToken && data.token.refreshToken) {
     const accessToken = data.token.accessToken;
     const refreshToken = data.token.refreshToken;

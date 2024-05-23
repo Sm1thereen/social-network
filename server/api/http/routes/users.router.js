@@ -13,9 +13,13 @@ export class UsersRouter {
       asyncHandlerWrapperUtil(this.usersController.createUser),
     ).post(
       '/login',
+      asyncHandlerWrapperUtil(this.usersController.userLogin),
+    ).get(
+      '/getUser',
+      authMiddleware,
       asyncHandlerWrapperUtil(this.usersController.getUser),
     ).get(
-      '/getUserById',
+      '/getUserById/:userId',
       authMiddleware,
       asyncHandlerWrapperUtil(this.usersController.getUserById),
     );

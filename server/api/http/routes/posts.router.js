@@ -7,12 +7,21 @@ export class PostsRouter {
     this.postsController = postsController;
   }
 
+  
   init = () => {
     return new Router().post(
       '/posts',
       authMiddleware,
       asyncHandlerWrapperUtil(this.postsController.createPost),
+    ).get(
+      '/posts',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.postsController.getAllPosts),
+    ).get(
+      '/posts/:userId',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.postsController.getPostsByUserId),
     );
   };
-
 }
+

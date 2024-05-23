@@ -9,5 +9,4 @@ export const postSchema = {
   text: {
     type: DataTypes.TEXT,
   },
-  
 };

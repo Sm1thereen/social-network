@@ -30,13 +30,21 @@ export class UsersUseCase {
     return {accessToken, refreshToken};
   };
   userLogin = async ({email, password}) => {
-    const user = await this.userRepository.getUser({email, password});
+    const user = await this.userRepository.userLogin({email, password});
     if (!user) {
       throw new Error('User not found');
     }
     const accessToken = generateAccessToken(user.id);
     const refreshToken = generateAccessToken(user.id);
     return {accessToken, refreshToken};
+  };
+
+  getUser = async ({userId}) => {
+    const user = await this.userRepository.getUser({userId});
+    if (!user) {
+      return null;
+    }
+    return user.unmarshal();
   };
   getUserById = async ({userId}) => {
     const user = await this.userRepository.getUserById({userId});

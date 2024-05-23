@@ -18,7 +18,7 @@ export const authMiddlewareFactory = ({usersUseCase}) => {
         return res.sendStatus(401);
       }
 
-      usersUseCase.getUserById({userId: payload.userId}).then(
+      usersUseCase.getUser({userId: payload.userId}).then(
         (user) => {
           if (!user) {
             return res.sendStatus(401);

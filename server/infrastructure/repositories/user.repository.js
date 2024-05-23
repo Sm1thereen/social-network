@@ -1,6 +1,5 @@
 import {UserModel} from '../index.js';
 import {User} from '../../domain/user.js';
-import jwt from 'jsonwebtoken';
 
 export class UserRepository {
   createUser = async ({first_name, last_name, email, password}) => {
@@ -11,21 +10,32 @@ export class UserRepository {
       console.error('Error creating user', error);
     }
   };
-  getUser = async ({email, password}) => {
+  userLogin = async ({email, password}) => {
     const user = await UserModel.findOne({where: {email, password}});
     if (!user) {
       return null;
     }
     return await UserRepository.toDomain(user);
   };
-  getUserById = async ({userId}) => {
+  getUser = async ({userId}) => {
     const user = await UserModel.findByPk(userId);
     if (!user) {
       return null;
     }
     return await UserRepository.toDomain(user);
   };
+  getUserById = async ({userId}) => {
+    try {
+      const user = await UserModel.findByPk(userId);
+      if (!user) {
+        return null;
+      }
+      return await UserRepository.toDomain(user);
+    } catch (error) {
+      console.error('error user repository', error);
+    }
 
+  };
   userUpdate = async (user, {refreshToken}) => {
     const ID = user.id;
     await UserModel.update({refreshToken}, {where: {id: ID}});
