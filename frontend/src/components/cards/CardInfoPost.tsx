@@ -22,13 +22,13 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
     };
     fetchFormattedDate();
   }, [props.post.createdAt]);
-
+  
   return (
     <div className="card-news__post">
       <div className="card-profile__info">
         <img src={woman} alt="" />
         <div className="card-user__info">
-          <Link to={`/profile/${props.post.user.id}`}>
+          <Link to={`/profile/${props.post.user.id}`} style={{color: 'black'}}>
             <h2 className="card-user__name">{props.post.user.first_name + ' ' + props.post.user.last_name}</h2>
           </Link>
           <p className="card-user__job">Ux Designer at Divim Technology</p>

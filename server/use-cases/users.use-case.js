@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import {UserRepository} from '../infrastructure/repositories/user.repository.js';
 
 
 const secretKeyAccess = 'FASF124FAS';
@@ -52,6 +53,13 @@ export class UsersUseCase {
       return null;
     }
     return user.unmarshal();
+  };
+  getAllUsers = async () => {
+    const users = await this.userRepository.getAllUsers();
+    if (!users) {
+      return null;
+    }
+    return users;
   };
 }
 

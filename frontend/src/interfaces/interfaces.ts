@@ -43,3 +43,7 @@ export interface CardPostProfileProps {
   user: User | null;
 }
 
+export interface CardUserProfileProps {
+  user: User | null;
+}
+

@@ -37,8 +37,8 @@ const Header = () => {
                   </Link>
                 </li>
                 {/*<li className="page__item">*/}
-                {/*  <Link to="/follow"*/}
-                {/*        className={`page__link ${location.pathname === '/follow' ? 'page__link--active' : ''}`}>*/}
+                {/*  <Link to="/categories"*/}
+                {/*        className={`page__link ${location.pathname === '/categories' ? 'page__link--active' : ''}`}>*/}
                 {/*    Follow*/}
                 {/*  </Link>*/}
                 {/*</li>*/}

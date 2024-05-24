@@ -23,6 +23,15 @@ export class UsersController {
   getUserById = async (req, res) => {
     return res.json({
       user: await this.usersUseCase.getUserById({userId: req.params.userId}),
+      status: 1,
     });
+  };
+  getAllUsers = async (req, res) => {
+    try {
+      const users = await this.usersUseCase.getAllUsers();
+      res.json({users: users.map(user => user.unmarshal()), status: 1});
+    } catch (error) {
+      res.status(500).json({error: error.message});
+    }
   };
 }

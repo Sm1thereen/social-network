@@ -43,6 +43,16 @@ export class UserRepository {
     console.log(user.refreshToken);
     return await UserRepository.toDomain(user);
   };
+  getAllUsers = async () => {
+    try {
+      const users = await UserModel.findAll();
+      console.log('users', users);
+      return await Promise.all(users.map(UserRepository.toDomain));
+    } catch (error) {
+      console.error('Error getting all users', error);
+      return [];
+    }
+  };
   static toDomain = async (userModel) => {
     return User.create({
       id: userModel.id,

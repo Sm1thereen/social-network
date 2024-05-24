@@ -236,15 +236,6 @@
     font-size: 0.875rem;
 }
 
-.recommend__card__btn {
-    width: 4.625rem;
-    height: 2rem;
-    border: 0.0625rem solid #0BAACA;
-    border-radius: 0.25rem;
-    font-weight: 500;
-    color: #0BAACA;
-    float: right;
-}
 
 .recommend__card__link {
     font-weight: 500;

@@ -1,0 +1,74 @@
+.main-follow {
+    width: 100%;
+    height: 100vh;
+    background-color: #f3f3f3;
+
+}
+
+.users__content {
+    background-color: #fff;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.follow__nav {
+    display: flex;
+    gap: 6.25rem;
+    align-items: center;
+    width: 21.875rem;
+    margin: 0 auto;
+    padding: 3.125rem 0;
+}
+
+.header-nav__btn {
+    border: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.btn-active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    margin-top: 5px;
+}
+
+.following__title {
+    color: #807E7E;
+    font-weight: 500;
+    margin-left: 1.5rem;
+}
+
+.following__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.following__btn {
+    border-radius: 0.3125rem;
+    font-weight: 600;
+    padding: 0.625rem;
+    transition: all 0.5s;
+}
+
+.following__btn:hover {
+    background-color: #f27f0a;
+    color: #ffffff;
+}
+
+.follow__btn {
+    border: 1px solid black;
+}
+
+.unfollow__btn {
+    border: 0.0625rem solid #D56A11;
+    color: #D56A11;
+}

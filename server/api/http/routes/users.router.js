@@ -22,6 +22,10 @@ export class UsersRouter {
       '/getUserById/:userId',
       authMiddleware,
       asyncHandlerWrapperUtil(this.usersController.getUserById),
+    ).get(
+      '/getAllUsers',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.usersController.getAllUsers),
     );
   };
 }

@@ -12,7 +12,7 @@ const CardPostHome: React.FC = ({user}: CardPostHomeProps) => {
 
   useEffect(() => {
     const getData = async () => {
-      const posts = await getDataRequest('/api/posts');
+      const posts = await getDataRequest('/posts');
       if (Array.isArray(posts.data)) {
         const reverseData = posts.data.reverse();
         setPosts(reverseData);

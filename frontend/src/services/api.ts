@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'http://localhost:5000/api';
 const authToken = localStorage.getItem('accessToken');
 
 export const postDataRequest = async (
@@ -47,7 +47,7 @@ export const createPost = async (text: string) => {
     const data = JSON.stringify({
       text,
     });
-    const response = await axios.post(`${API_BASE_URL}/api/posts`, data, {
+    const response = await axios.post(`${API_BASE_URL}/posts`, data, {
       headers: {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': 'application/json',
@@ -59,25 +59,6 @@ export const createPost = async (text: string) => {
       console.error('Error:', response.data);
     }
     return response;
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
-export const getUserById = async () => {
-  const authToken = localStorage.getItem('accessToken');
-  try {
-    if (!authToken) {
-      console.log('authToken not found');
-      return;
-    }
-    const response = await axios.get(`${API_BASE_URL}/api/v1/getUserById`, {
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
-    });
-    const user = response.data.user;
-    console.log('user:', user);
-    return user;
   } catch (error) {
     console.error('Error:', error);
   }
