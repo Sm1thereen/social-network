@@ -6,7 +6,7 @@ import setAccessToken from '../../services/setAccessToken';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {RegistrationSchema} from '../../validationSchema/schema';
-import Button from '../shared/buttons/Button';
+import Button from '../shared/Button';
 import {useNavigate} from 'react-router-dom';
 
 const SignUp: React.FC<AuthorizationProps> = ({toggleForm}) => {
@@ -15,7 +15,7 @@ const SignUp: React.FC<AuthorizationProps> = ({toggleForm}) => {
     try {
       console.log('data', data);
       const response = await postDataRequest(
-        data, '/v1/registration',
+        data, '/registration',
       );
       console.log('response', response);
       await setAccessToken(response);

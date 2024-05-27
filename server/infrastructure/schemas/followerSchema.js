@@ -1,7 +1,7 @@
 import {DataTypes} from 'sequelize';
 
 export const followerSchema = {
-  userId: {
+  user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -10,7 +10,7 @@ export const followerSchema = {
     },
     primaryKey: true,
   },
-  followerId: {
+  follower_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {

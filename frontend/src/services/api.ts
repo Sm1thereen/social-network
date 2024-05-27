@@ -10,6 +10,7 @@ export const postDataRequest = async (
 ) => {
   try {
     const data = JSON.stringify(formData);
+    console.log('data', data);
     const response = await axios.post(`${API_BASE_URL}${url}`, data, {
       headers: {
         Authorization: `Bearer ${authToken}`,

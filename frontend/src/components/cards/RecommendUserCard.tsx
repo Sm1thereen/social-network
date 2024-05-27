@@ -1,6 +1,6 @@
 import React from 'react';
 import recommend from '../../assets/home/recommend/recommend.png';
-import PrimaryButton from '../shared/buttons/PrimaryButton';
+import Button from '../shared/Button';
 
 const RecommendUserCard = () => {
   return (
@@ -19,7 +19,7 @@ const RecommendUserCard = () => {
           </p>
         </div>
       </div>
-      <PrimaryButton />
+      <Button text="Follow" style="primary__btn" />
     </li>
   );
 };

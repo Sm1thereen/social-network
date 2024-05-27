@@ -6,8 +6,8 @@ import {getDataRequest} from '../../services/api';
 import CardPostProfile from '../../components/cards/CardPostProfile';
 import HeaderProfile from './HeaderProfile';
 import {useParams} from 'react-router-dom';
-import './style.css';
 import HeaderNav from '../../components/shared/HeaderNav';
+import './style.css';
 
 
 const MainProfile = () => {
@@ -23,9 +23,7 @@ const MainProfile = () => {
   useEffect(() => {
     const fetchDataUser = async () => {
       const userId = id;
-      console.log('userId', userId);
-      const data = await getDataRequest(`/v1/getUserById/${userId}`);
-      console.log('data.user', data.user);
+      const data = await getDataRequest(`/getUserById/${userId}`);
       setDataUser(data.user);
       const posts = await getDataRequest(`/posts/${userId}`);
       if (Array.isArray(posts.data)) {
@@ -42,17 +40,6 @@ const MainProfile = () => {
         <div className="profile__info__container">
           <div className="profile__info__wrapper">
             <HeaderNav buttons={buttons} page={page} setPage={setPage} />
-            {/*<nav className="profile__nav">*/}
-            {/*  <button className={`follow__nav__btn ${page === 'posts' ? 'btn-active' : ''}`}*/}
-            {/*          onClick={() => setPage('posts')}>Posts*/}
-            {/*  </button>*/}
-            {/*  <button className={`follow__nav__btn ${page === 'following' ? 'btn-active' : ''}`}*/}
-            {/*          onClick={() => setPage('following')}>Following*/}
-            {/*  </button>*/}
-            {/*  <button className={`follow__nav__btn ${page === 'followers' ? 'btn-active' : ''}`}*/}
-            {/*          onClick={() => setPage('followers')}>Followers*/}
-            {/*  </button>*/}
-            {/*</nav>*/}
             {
               page === 'posts' &&
               <div className="posts__content">

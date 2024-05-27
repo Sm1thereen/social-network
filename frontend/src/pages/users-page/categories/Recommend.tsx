@@ -8,7 +8,7 @@ const Recommend = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const getData = await getDataRequest('/v1/getAllUsers');
+      const getData = await getDataRequest('/getAllUsers');
       if (Array.isArray(getData.users)) {
         setRecommendUsers(getData.users);
       }

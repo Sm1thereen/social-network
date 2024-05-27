@@ -6,7 +6,7 @@ import setAccessToken from '../../services/setAccessToken';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {LoginSchema} from '../../validationSchema/schema';
-import Button from '../shared/buttons/Button';
+import Button from '../shared/Button';
 import {useNavigate} from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ const SignIn: React.FC<AuthorizationProps> = ({toggleForm}) => {
   const navigate = useNavigate();
   const onSubmit = async (data: Login) => {
     try {
-      const response = await postDataRequest(data, '/v1/login');
+      const response = await postDataRequest(data, '/login');
       await setAccessToken(response);
       navigate('/home');
     } catch (error) {

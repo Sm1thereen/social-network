@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import woman from '../../assets/home/cards/woman.png';
 import {CardUserProfileProps} from '../../interfaces/interfaces';
-import PrimaryButton from '../shared/buttons/PrimaryButton';
 import './style.css';
 import {Link} from 'react-router-dom';
+import Button from '../shared/Button';
+import {postDataRequest} from '../../services/api';
+import {getUserIdFromToken} from '../../services/utils';
 
+interface FollowData {
+  userId: number;
+  followId: number;
+}
 
 const CardInfoUser: React.FC<CardUserProfileProps> = (props) => {
+  const onSubmit = async () => {
+    const myId = await getUserIdFromToken();
+    const followerId = props.user?.id;
+    const response = await postDataRequest({followerId: followerId}, '/follow');
+    console.log('response', response);
+  };
   return (
     <div className="card-profile-user__wrapper">
       <Link to={`/profile/${props.user?.id}`}>
@@ -18,8 +30,7 @@ const CardInfoUser: React.FC<CardUserProfileProps> = (props) => {
           </div>
         </div>
       </Link>
-
-      <PrimaryButton />
+      <Button text="Follow" style="primary__btn" onClick={onSubmit} />
     </div>
   );
 };

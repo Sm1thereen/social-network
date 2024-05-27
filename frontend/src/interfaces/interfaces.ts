@@ -47,3 +47,13 @@ export interface CardUserProfileProps {
   user: User | null;
 }
 
+export interface ButtonProps {
+  text?: string;
+  onClick?: () => void;
+  style?: string;
+  width?: number;
+  height?: number;
+  padding?: string;
+  type?: 'submit' | 'button' | 'reset';
+
+}

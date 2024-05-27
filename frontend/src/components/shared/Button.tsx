@@ -1,16 +1,7 @@
 import React from 'react';
-import '../style.css';
+import './style.css';
+import {ButtonProps} from '../../interfaces/interfaces';
 
-export interface ButtonProps {
-  text?: string;
-  onClick?: () => void;
-  style?: string;
-  width?: number;
-  height?: number;
-  padding?: string;
-  type?: 'submit' | 'button' | 'reset';
-
-}
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (

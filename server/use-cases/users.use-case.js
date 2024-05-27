@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-import {UserRepository} from '../infrastructure/repositories/user.repository.js';
 
 
 const secretKeyAccess = 'FASF124FAS';
@@ -60,6 +59,18 @@ export class UsersUseCase {
       return null;
     }
     return users;
+  };
+  createFollower = async ({userId, followerId}) => {
+    await this.userRepository.createFollower({userId, followerId});
+  };
+  getFollowingById = async ({id}) => {
+    console.log('id', id);
+    const followings = await this.userRepository.getFollowingById({id});
+    console.log('following', followings);
+    if (!followings) {
+      throw new Error('Following not found');
+    }
+    return followings;
   };
 }
 
