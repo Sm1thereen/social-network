@@ -1,5 +1,6 @@
-import {UserModel} from '../index.js';
+import {FollowerModel, UserModel} from '../index.js';
 import {User} from '../../domain/user.js';
+import {where} from 'sequelize';
 
 export class UserRepository {
   createUser = async ({first_name, last_name, email, password}) => {
@@ -43,6 +44,31 @@ export class UserRepository {
     console.log(user.refreshToken);
     return await UserRepository.toDomain(user);
   };
+  getAllUsers = async () => {
+    try {
+      const users = await UserModel.findAll();
+      return await Promise.all(users.map(UserRepository.toDomain));
+    } catch (error) {
+      console.error('Error getting all users', error);
+      return [];
+    }
+  };
+  createFollower = async ({userId, followerId}) => {
+    try {
+      await FollowerModel.create({user_id: userId, follower_id: followerId});
+    } catch (error) {
+      console.error('error', error);
+    }
+  };
+  getFollowingById = async ({id}) => {
+    try {
+      const user = await UserModel.findOne({where: {id}, include: 'following'});
+      return Promise.all(user.following.map(following => UserRepository.toDomain(following)));
+    } catch (error) {
+      console.error('Error getting following', error);
+    }
+  };
+
   static toDomain = async (userModel) => {
     return User.create({
       id: userModel.id,

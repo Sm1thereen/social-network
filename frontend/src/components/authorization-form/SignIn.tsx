@@ -14,7 +14,7 @@ const SignIn: React.FC<AuthorizationProps> = ({toggleForm}) => {
   const navigate = useNavigate();
   const onSubmit = async (data: Login) => {
     try {
-      const response = await postDataRequest(data, '/api/v1/login');
+      const response = await postDataRequest(data, '/login');
       await setAccessToken(response);
       navigate('/home');
     } catch (error) {

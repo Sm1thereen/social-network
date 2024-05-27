@@ -32,6 +32,7 @@ export class PostRepository {
     }
   };
 
+  
   static toDomain = async (postModel) => {
     return Post.create({
       id: postModel.id,

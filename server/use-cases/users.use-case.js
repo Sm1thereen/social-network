@@ -53,6 +53,25 @@ export class UsersUseCase {
     }
     return user.unmarshal();
   };
+  getAllUsers = async () => {
+    const users = await this.userRepository.getAllUsers();
+    if (!users) {
+      return null;
+    }
+    return users;
+  };
+  createFollower = async ({userId, followerId}) => {
+    await this.userRepository.createFollower({userId, followerId});
+  };
+  getFollowingById = async ({id}) => {
+    console.log('id', id);
+    const followings = await this.userRepository.getFollowingById({id});
+    console.log('following', followings);
+    if (!followings) {
+      throw new Error('Following not found');
+    }
+    return followings;
+  };
 }
 
 

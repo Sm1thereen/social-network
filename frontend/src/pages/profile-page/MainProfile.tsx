@@ -1,27 +1,31 @@
 import React, {useEffect, useState} from 'react';
-import Following from '../follow-page/follow/Following';
-import Followers from '../follow-page/follow/Followers';
+import Following from '../users-page/categories/Following';
+import Followers from '../users-page/categories/Followers';
 import {Post, User} from '../../interfaces/interfaces';
 import {getDataRequest} from '../../services/api';
 import CardPostProfile from '../../components/cards/CardPostProfile';
 import HeaderProfile from './HeaderProfile';
 import {useParams} from 'react-router-dom';
+import HeaderNav from '../../components/shared/HeaderNav';
 import './style.css';
 
 
 const MainProfile = () => {
   const {id} = useParams();
-  const [page, setPage] = useState<'posts' | 'following' | 'followers'>('posts');
+  const [page, setPage] = useState<string>('posts');
   const [dataUser, setDataUser] = useState<User | null>({first_name: '', last_name: ''});
   const [posts, setPosts] = useState<Post[]>([]);
+  const buttons = [
+    {label: 'Posts', value: 'posts'},
+    {label: 'Following', value: 'following'},
+    {label: 'Followers', value: 'followers'},
+  ];
   useEffect(() => {
     const fetchDataUser = async () => {
       const userId = id;
-      console.log('userId', userId);
-      const data = await getDataRequest(`/api/v1/getUserById/${userId}`);
-      console.log('data.user', data.user);
+      const data = await getDataRequest(`/getUserById/${userId}`);
       setDataUser(data.user);
-      const posts = await getDataRequest(`/api/posts/${userId}`);
+      const posts = await getDataRequest(`/posts/${userId}`);
       if (Array.isArray(posts.data)) {
         const reverseData = posts.data.reverse();
         setPosts(reverseData);
@@ -35,17 +39,7 @@ const MainProfile = () => {
         <HeaderProfile user={dataUser} />
         <div className="profile__info__container">
           <div className="profile__info__wrapper">
-            <nav className="profile__nav">
-              <button className={`follow__nav__btn ${page === 'posts' ? 'btn-active' : ''}`}
-                      onClick={() => setPage('posts')}>Posts
-              </button>
-              <button className={`follow__nav__btn ${page === 'following' ? 'btn-active' : ''}`}
-                      onClick={() => setPage('following')}>Following
-              </button>
-              <button className={`follow__nav__btn ${page === 'followers' ? 'btn-active' : ''}`}
-                      onClick={() => setPage('followers')}>Followers
-              </button>
-            </nav>
+            <HeaderNav buttons={buttons} page={page} setPage={setPage} />
             {
               page === 'posts' &&
               <div className="posts__content">

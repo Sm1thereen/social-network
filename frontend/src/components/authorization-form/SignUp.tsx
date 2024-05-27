@@ -15,7 +15,7 @@ const SignUp: React.FC<AuthorizationProps> = ({toggleForm}) => {
     try {
       console.log('data', data);
       const response = await postDataRequest(
-        data, '/api/v1/registration',
+        data, '/registration',
       );
       console.log('response', response);
       await setAccessToken(response);

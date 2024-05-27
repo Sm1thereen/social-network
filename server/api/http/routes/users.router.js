@@ -22,6 +22,18 @@ export class UsersRouter {
       '/getUserById/:userId',
       authMiddleware,
       asyncHandlerWrapperUtil(this.usersController.getUserById),
+    ).get(
+      '/getAllUsers',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.usersController.getAllUsers),
+    ).post(
+      '/follow',
+      authMiddleware,
+      this.usersController.createFollower,
+    ).get(
+      '/following',
+      authMiddleware,
+      this.usersController.getFollowingById,
     );
   };
 }
