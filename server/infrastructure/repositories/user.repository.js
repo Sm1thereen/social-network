@@ -1,6 +1,5 @@
 import {FollowerModel, UserModel} from '../index.js';
 import {User} from '../../domain/user.js';
-import {where} from 'sequelize';
 
 export class UserRepository {
   createUser = async ({first_name, last_name, email, password}) => {
@@ -55,17 +54,41 @@ export class UserRepository {
   };
   createFollower = async ({userId, followerId}) => {
     try {
-      await FollowerModel.create({user_id: userId, follower_id: followerId});
+      await FollowerModel.create({follow_from: userId, follow_to: followerId});
     } catch (error) {
       console.error('error', error);
     }
   };
-  getFollowingById = async ({id}) => {
+  getFollowingById = async ({userId}) => {
+    console.log('userID reposss', userId);
     try {
-      const user = await UserModel.findOne({where: {id}, include: 'following'});
+      const user = await UserModel.findOne({where: {id: userId}, include: 'following'});
       return Promise.all(user.following.map(following => UserRepository.toDomain(following)));
     } catch (error) {
       console.error('Error getting following', error);
+    }
+  };
+  getFollowersById = async ({userId}) => {
+    try {
+      console.log('userID repo', userId);
+      const user = await UserModel.findOne({where: {id: userId}, include: 'followers'});
+      return Promise.all(user.followers.map(followers => UserRepository.toDomain(followers)));
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+  unFollowById = async ({userId, followerId}) => {
+    try {
+      const result = await FollowerModel.destroy({
+        where: {follow_from: userId, follow_to: followerId},
+      });
+      if (!result) {
+        console.error('Error deleting user', error);
+      }
+      return true;
+    } catch (error) {
+      console.error('Error', error.message);
+      return false;
     }
   };
 

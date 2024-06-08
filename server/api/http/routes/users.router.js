@@ -29,11 +29,19 @@ export class UsersRouter {
     ).post(
       '/follow',
       authMiddleware,
-      this.usersController.createFollower,
+      asyncHandlerWrapperUtil(this.usersController.createFollower),
     ).get(
-      '/following',
+      '/following/:userId',
       authMiddleware,
-      this.usersController.getFollowingById,
+      asyncHandlerWrapperUtil(this.usersController.getFollowingById),
+    ).get(
+      '/followers/:userId',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.usersController.getFollowersById),
+    ).post(
+      '/unfollow',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.usersController.unFollowById),
     );
   };
 }

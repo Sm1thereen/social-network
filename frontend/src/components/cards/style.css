@@ -31,3 +31,120 @@
 .card-profile__job {
     color: grey;
 }
+
+/* Card-post */
+.card-post__wrapper {
+    width: 90%;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.card-news__post {
+    padding: 24px;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-profile__info {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 8px
+}
+
+.card-user__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-user__name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-user__job {
+    color: #807e7e;
+}
+
+.card-user__data {
+    color: #807e7e;
+}
+
+.card-post__text {
+    color: #3E3E59;
+    line-height: 1.5;
+}
+
+.post__img {
+    max-width: 44rem;
+}
+
+.card-post__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-analytics {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-analytics__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-create-comment__wrapper {
+    width: 100%;
+    height: auto;
+}
+
+
+/*  Create comments for post*/
+.post-create-comment__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+}
+
+.create-comment__input {
+    height: 200px;
+    width: 100%;
+    line-height: normal;
+    padding: 18px 15px 30px 15px;
+    resize: none;
+    border-radius: 0.9375rem;
+}
+
+.create-comment__btn {
+    border-radius: 8px;
+    padding: 16px 48px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    font-size: 1.125rem;
+    font-weight: 600;
+    background-color: #ffffff;
+    transition: all 0.5s;
+}
+
+.create-comment__btn:hover {
+    background-color: #e0e0e0;
+
+}
+
+.create-comment__btn:active {
+    background-color: #919191;
+}

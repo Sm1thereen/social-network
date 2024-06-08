@@ -12,7 +12,7 @@ module.exports = {
           allowNull: false,
           type: Sequelize.DataTypes.INTEGER,
         },
-        user_id: {
+        follow_from: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
@@ -20,7 +20,7 @@ module.exports = {
             key: 'id',
           },
         },
-        follower_id: {
+        follow_to: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
@@ -35,7 +35,7 @@ module.exports = {
         },
       }, {transaction});
 
-      await queryInterface.addIndex('followers', ['user_id', 'follower_id'], {
+      await queryInterface.addIndex('followers', ['follow_to', 'follow_from'], {
         unique: true,
         transaction,
       });
@@ -50,7 +50,7 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     const transaction = await queryInterface.sequelize.transaction();
     try {
-      await queryInterface.removeIndex('followers', ['user_id', 'follower_id'], {transaction});
+      await queryInterface.removeIndex('followers', ['follow_to', 'follow_from'], {transaction});
       await queryInterface.dropTable('followers', {transaction});
       await transaction.commit();
     } catch (error) {

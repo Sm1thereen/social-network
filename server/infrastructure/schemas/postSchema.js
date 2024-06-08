@@ -1,4 +1,4 @@
-import sequelize, {DataTypes} from 'sequelize';
+import {DataTypes} from 'sequelize';
 
 export const postSchema = {
   id: {

@@ -63,15 +63,25 @@ export class UsersUseCase {
   createFollower = async ({userId, followerId}) => {
     await this.userRepository.createFollower({userId, followerId});
   };
-  getFollowingById = async ({id}) => {
-    console.log('id', id);
-    const followings = await this.userRepository.getFollowingById({id});
-    console.log('following', followings);
+  getFollowingById = async ({userId}) => {
+    const followings = await this.userRepository.getFollowingById({userId});
     if (!followings) {
       throw new Error('Following not found');
     }
     return followings;
   };
+  getFollowersById = async ({userId}) => {
+    const followings = await this.userRepository.getFollowersById({userId});
+    if (!followings) {
+      throw new Error('Followers not found');
+    }
+    return followings;
+  };
+
+  unFollowById = async ({userId, followerId}) => {
+    await this.userRepository.unFollowById({userId, followerId});
+  };
+
 }
 
 

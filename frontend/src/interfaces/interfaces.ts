@@ -45,6 +45,8 @@ export interface CardPostProfileProps {
 
 export interface CardUserProfileProps {
   user: User | null;
+  textButton: string;
+  setTextButton: (text: string) => void;
 }
 
 export interface ButtonProps {

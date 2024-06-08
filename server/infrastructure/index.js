@@ -2,6 +2,7 @@ import {userSchema} from './schemas/userSchema.js';
 import {Sequelize} from 'sequelize';
 import {postSchema} from './schemas/postSchema.js';
 import {followerSchema} from './schemas/followerSchema.js';
+import {commentSchema} from './schemas/commentSchema.js';
 
 const sequelize = new Sequelize('social_network', 'postgres', 'postgres', {
   host: 'localhost',
@@ -25,6 +26,9 @@ export const FollowerModel = sequelize.define('follower', followerSchema, {
   tableName: 'followers',
   timestamps: false,
 });
+export const CommentModel = sequelize.define('comment', commentSchema, {
+  tableName: 'comments',
+});
 
 UserModel.hasMany(PostModel, {
   as: 'posts',
@@ -42,17 +46,42 @@ PostModel.belongsTo(UserModel, {
 UserModel.belongsToMany(UserModel, {
   through: FollowerModel,
   as: 'followers',
-  foreignKey: 'user_id',
-  otherKey: 'follower_id',
+  foreignKey: 'follow_to',
+  otherKey: 'follow_from',
+
+
 });
 
 UserModel.belongsToMany(UserModel, {
   through: FollowerModel,
   as: 'following',
-  foreignKey: 'follower_id',
-  otherKey: 'user_id',
+  foreignKey: 'follow_from',
+  otherKey: 'follow_to',
+});
+// Асоціації для моделі Comment
+UserModel.hasMany(CommentModel, {
+  as: 'comments',
+  foreignKey: 'user_id',
+  sourceKey: 'id',
+});
+
+CommentModel.belongsTo(UserModel, {
+  as: 'user',
+  foreignKey: 'user_id',
+  targetKey: 'id',
+});
+
+PostModel.hasMany(CommentModel, {
+  as: 'comments',
+  foreignKey: 'post_id',
+  sourceKey: 'id',
+});
+
+CommentModel.belongsTo(PostModel, {
+  as: 'post',
+  foreignKey: 'post_id',
+  targetKey: 'id',
 });
 
 
 await sequelize.sync();
-console.log('All models were synchronized successfully.');

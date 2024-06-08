@@ -2,17 +2,13 @@ import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import woman from '../../assets/home/cards/woman.png';
 import {zodResolver} from '@hookform/resolvers/zod';
-import zod from 'zod';
-import CardPostHome from '../../components/cards/CardPostHome';
+import CardPostHome from '../../components/cards/card-post/CardPostHome';
 import RecommendAccount from './recommend/RecommendAccount';
 import RecommendEvents from './recommend/RecommendEvents';
 import {createPost} from '../../services/api';
 import './style.css';
+import {createPostSchema} from '../../services/schema';
 
-
-const createPostSchema = zod.object({
-  postText: zod.string().min(10).max(500),
-});
 
 type FormData = {
   postText: string
