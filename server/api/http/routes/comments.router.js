@@ -12,6 +12,10 @@ export class CommentsRouter {
       '/createComment',
       authMiddleware,
       asyncHandlerWrapperUtil(this.commentsController.createComment),
+    ).get(
+      '/getCommentsByPostId/:postId',
+      authMiddleware,
+      asyncHandlerWrapperUtil(this.commentsController.getCommentsByPostId),
     );
   };
 }

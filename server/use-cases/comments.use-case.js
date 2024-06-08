@@ -10,4 +10,15 @@ export class CommentsUseCase {
     }
     return comment;
   };
+  getCommentsByPostId = async ({postId}) => {
+    try {
+      const comments = await this.commentRepository.getCommentsByPostId({postId});
+      if (!comments || comments.length === 0) {
+        return [];
+      }
+      return comments.map((comment) => comment.unmarshal());
+    } catch (error) {
+      console.error('error', error);
+    }
+  };
 }

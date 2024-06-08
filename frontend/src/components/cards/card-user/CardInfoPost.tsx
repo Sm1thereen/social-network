@@ -32,6 +32,7 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
   const [formattedDate, setFormattedDate] = useState<string>();
   const [showComments, setShowComments] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
+  const [comments, setComments] = useState<[]>([]);
 
   const onSubmit = async (data: CommentData) => {
     try {
@@ -61,6 +62,8 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
       try {
         const data = await getDataRequest('/getUser');
         setUser(data.user);
+        const getComments = await getDataRequest(`/getCommentsByPostId/${props.post.id}`);
+        setComments(getComments.data);
       } catch (error) {
         console.error('Error', error);
       }
@@ -99,6 +102,9 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
           <li className="post-analytics__item">
             <button className="post-analytics__btn" onClick={() => setShowComments(!showComments)}>
               <img src={comment} alt="" />
+              {
+                comments.length
+              }
             </button>
           </li>
         </ul>
