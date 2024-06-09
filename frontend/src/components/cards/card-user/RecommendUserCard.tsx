@@ -1,6 +1,6 @@
 import React from 'react';
-import recommend from '../../assets/home/recommend/recommend.png';
-import Button from '../shared/Button';
+import recommend from '../../../assets/home/recommend/recommend.png';
+import Button from '../../shared/Button';
 
 const RecommendUserCard = () => {
   return (

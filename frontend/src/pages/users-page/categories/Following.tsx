@@ -1,33 +1,33 @@
 import React, {useEffect, useState} from 'react';
-import CardInfoUser from '../../../components/cards/CardInfoUser';
 import {getDataRequest} from '../../../services/api';
 import {getUserIdFromToken} from '../../../services/utils';
+import CardInfoUser from '../../../components/cards/card-user/CardInfoUser';
+import {User} from '../../../interfaces/interfaces';
 
 const Following = () => {
-  const [isFollow, setIsFollow] = useState(true);
+  const [followings, setFollowings] = useState<User[]>();
+  const [textButton, setTextButton] = useState('Unfollow');
   const countFollow = 176;
+
   useEffect(() => {
     const getData = async () => {
       const myId = await getUserIdFromToken();
-      const data = await getDataRequest(`/following`);
-      console.log('data', data);
+      const user = await getDataRequest(`/following/${myId}`);
+      if (Array.isArray(user.data)) {
+        setFollowings(user.data);
+      }
     };
     getData();
   }, []);
+
   return (
     <>
       <h2 className="following__title">You are following {countFollow} people</h2>
-      <ul className="following__list">
-        <li className="following__item">
-          <div className="following__info__user">
-            {/*<CardInfoUser />*/}
-          </div>
-          <button className={`following__btn ${isFollow ? 'follow__btn' : 'unfollow__btn'}`}
-                  onClick={() => setIsFollow(!isFollow)}>
-            {isFollow ? 'Unfollow' : 'Follow'}
-          </button>
-        </li>
-      </ul>
+      {
+        followings !== undefined && followings.map((user, index) => (
+          <CardInfoUser key={index} user={user} textButton={textButton} setTextButton={setTextButton} />
+        ))
+      }
     </>
   );
 };

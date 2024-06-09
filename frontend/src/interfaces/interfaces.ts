@@ -1,3 +1,6 @@
+import {util} from 'zod';
+import noUndefined = util.noUndefined;
+
 export interface Login {
   email: string;
   password: string;
@@ -23,6 +26,11 @@ export interface User {
   last_name: string;
 }
 
+export interface Likes {
+  user_id: number;
+  post_id: number;
+}
+
 export interface AuthorizationProps {
   toggleForm: () => void;
 }
@@ -32,6 +40,7 @@ export interface Post {
   text: string;
   createdAt: string;
   user: User;
+  likes: any;
 }
 
 export interface CardInfoPostProps {
@@ -45,6 +54,8 @@ export interface CardPostProfileProps {
 
 export interface CardUserProfileProps {
   user: User | null;
+  textButton: string;
+  setTextButton: (text: string) => void;
 }
 
 export interface ButtonProps {

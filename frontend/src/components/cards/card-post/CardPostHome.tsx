@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {getDataRequest} from '../../services/api';
-import {Post, User} from '../../interfaces/interfaces';
-import CardInfoPost from './CardInfoPost';
+import {getDataRequest} from '../../../services/api';
+import {Post, User} from '../../../interfaces/interfaces';
+import CardInfoPost from '../card-user/CardInfoPost';
 
 interface CardPostHomeProps {
   user?: User | null;

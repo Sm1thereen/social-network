@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import woman from '../../assets/home/cards/woman.png';
-import testPost from '../../assets/home/cards/test-post.png';
-import like from '../../assets/home/cards/like.svg';
-import bookmark from '../../assets/header/bookmark.svg';
-import {formatDate} from '../../services/utils';
-import {CardPostProfileProps} from '../../interfaces/interfaces';
+import woman from '../../../assets/home/cards/woman.png';
+import testPost from '../../../assets/home/cards/test-post.png';
+import like from '../../../assets/home/cards/like-outline.png';
+import {formatDate} from '../../../services/utils';
+import {CardPostProfileProps} from '../../../interfaces/interfaces';
+import comment from '../../../assets/home/cards/comment.png';
 
 
 const CardPostProfile: React.FC<CardPostProfileProps> = (props) => {
@@ -35,11 +35,15 @@ const CardPostProfile: React.FC<CardPostProfileProps> = (props) => {
         <img className="post__img" src={testPost} alt="" />
         <ul className="post-analytics">
           <li className="post-analytics__item">
-            <img src={like} alt="" />
+            <button className="post-analytics__btn">
+              <img src={like} alt="" />
+            </button>
             <p className="post-analytics__count">15</p>
           </li>
           <li className="post-analytics__item">
-            <img src={bookmark} alt="" />
+            <button className="post-analytics__btn">
+              <img src={comment} alt="" />
+            </button>
           </li>
         </ul>
       </div>

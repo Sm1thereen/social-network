@@ -24,5 +24,4 @@ export class PostsUseCase {
     }
     return posts;
   };
-
 }

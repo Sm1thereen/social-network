@@ -45,10 +45,31 @@ export class UsersController {
   };
   getFollowingById = async (req, res) => {
     try {
-      const followings = await this.usersUseCase.getFollowingById({id: req.user.id});
+      const followings = await this.usersUseCase.getFollowingById({userId: req.params.userId});
       res.json({data: followings.map(following => following.unmarshal())});
     } catch (error) {
       res.status(500).json({error: error.message});
+    }
+  };
+  getFollowersById = async (req, res) => {
+    try {
+      const followers = await this.usersUseCase.getFollowersById({userId: req.params.userId});
+      res.json({data: followers.map(follower => follower.unmarshal())});
+    } catch (error) {
+      res.status(500).json({error: error.message});
+    }
+  };
+  unFollowById = async (req, res) => {
+    try {
+      await this.usersUseCase.unFollowById({
+        userId: req.user.id,
+        followerId: req.body.followerId,
+      });
+      return res.json({
+        status: 1,
+      });
+    } catch (error) {
+      console.error('error', error.message);
     }
   };
 }

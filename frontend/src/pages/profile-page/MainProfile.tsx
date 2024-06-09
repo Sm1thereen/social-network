@@ -3,7 +3,7 @@ import Following from '../users-page/categories/Following';
 import Followers from '../users-page/categories/Followers';
 import {Post, User} from '../../interfaces/interfaces';
 import {getDataRequest} from '../../services/api';
-import CardPostProfile from '../../components/cards/CardPostProfile';
+import CardPostProfile from '../../components/cards/card-post/CardPostProfile';
 import HeaderProfile from './HeaderProfile';
 import {useParams} from 'react-router-dom';
 import HeaderNav from '../../components/shared/HeaderNav';

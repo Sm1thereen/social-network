@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import arrow from '../../../assets/home/recommend/arrow-right.svg';
-import RecommendUserCard from '../../../components/cards/RecommendUserCard';
+import RecommendUserCard from '../../../components/cards/card-user/RecommendUserCard';
 
 const RecommendAccount = () => {
   return (
