@@ -1,5 +1,5 @@
-import {PostModel} from '../index.js';
 import {Post} from '../../domain/post.js';
+import {PostModel} from '../index.js';
 
 export class PostRepository {
   createPost = async ({text, userId}) => {
@@ -25,19 +25,19 @@ export class PostRepository {
 
   getAllPosts = async () => {
     try {
-      const posts = await PostModel.findAll({include: 'user'});
+      const posts = await PostModel.findAll({include: ['user', 'likes']});
       return await Promise.all(posts.map(PostRepository.toDomain));
     } catch (error) {
       console.error('Error getting all posts', error);
     }
   };
-
   static toDomain = async (postModel) => {
     return Post.create({
       id: postModel.id,
       text: postModel.text,
       createdAt: postModel.createdAt,
       user: postModel.user,
+      likes: postModel.likes,
     });
   };
 }

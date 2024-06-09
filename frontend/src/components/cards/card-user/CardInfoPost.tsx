@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import testPost from '../../../assets/home/cards/test-post.png';
-import like from '../../../assets/home/cards/like-outline.png';
-import {CardInfoPostProps, User} from '../../../interfaces/interfaces';
+import {CardInfoPostProps, Likes, User} from '../../../interfaces/interfaces';
 import {formatDate, getUserIdFromToken} from '../../../services/utils';
-import comment from '../../../assets/home/cards/comment.png';
 import {Controller, useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {createCommentSchema} from '../../../services/schema';
@@ -11,12 +9,17 @@ import {getDataRequest, postDataRequest} from '../../../services/api';
 import CardProfileInfo from './CardProfileInfo';
 import {Link} from 'react-router-dom';
 import woman from '../../../assets/home/cards/woman.png';
+import comment from '../../../assets/home/cards/comment.png';
+import likeImg from '../../../assets/home/cards/like-outline.png';
+import likeImgFill from '../../../assets/home/cards/like-fill.png';
+
 
 interface CommentData {
   content: string;
   user_id: string;
   post_id: string;
 }
+
 
 const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
   const {
@@ -33,6 +36,8 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
   const [showComments, setShowComments] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
   const [comments, setComments] = useState<[]>([]);
+  const [like, setLike] = useState<boolean>(false);
+  const [likesArray, setLikesArray] = useState<Likes[]>(props.post.likes);
 
   const onSubmit = async (data: CommentData) => {
     try {
@@ -43,9 +48,17 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
         post_id: props.post.id,
       };
       const response = await postDataRequest(myData, '/createComment');
-      console.log('response', response);
     } catch (error) {
       console.error('Error:', error);
+    }
+  };
+  const setLikePost = async () => {
+    try {
+      const myId: number = await getUserIdFromToken();
+      const myData = {user_id: myId, post_id: props.post.id};
+      const response = await postDataRequest(myData, '/createLike');
+    } catch (error) {
+      console.error('error', error);
     }
   };
 
@@ -68,8 +81,17 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
         console.error('Error', error);
       }
     };
+    const checkLikes = async () => {
+      const myId = await getUserIdFromToken();
+      const someState = likesArray[0].user_id == myId ? setLike(true) : setLike(false);
+      console.log('someState', someState);
+      console.log('likesArray', likesArray);
+      console.log('like', like);
+
+    };
     fetchFormattedDate();
     getData();
+    checkLikes();
   }, []);
 
   return (
@@ -95,16 +117,20 @@ const CardInfoPost: React.FC<CardInfoPostProps> = (props) => {
         <img className="post__img" src={testPost} alt="" />
         <ul className="post-analytics">
           <li className="post-analytics__item">
-            <button className="post-analytics__btn">
-              <img src={like} alt="" />
+            <button className="post-analytics__btn" onClick={() => setLikePost()}>
+              {
+                like ? <img src={likeImgFill} alt="" /> : (
+                  <img src={likeImg} alt="" />
+
+                )
+              }
+              <p style={{fontSize: 16}}>{props.post.likes.length}</p>
             </button>
           </li>
           <li className="post-analytics__item">
             <button className="post-analytics__btn" onClick={() => setShowComments(!showComments)}>
               <img src={comment} alt="" />
-              {
-                comments.length
-              }
+              <p style={{fontSize: 16}}>{comments.length}</p>
             </button>
           </li>
         </ul>

@@ -105,6 +105,12 @@
     gap: 5px;
 }
 
+.post-analytics__btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .post-create-comment__wrapper {
     width: 100%;
     height: auto;

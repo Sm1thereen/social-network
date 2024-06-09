@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import {commentsRouter} from './http/routes/index.js';
+import {commentsRouter, likesRouter} from './http/routes/index.js';
 
 export class Server {
   _commonPrefix = '/api';
@@ -11,6 +11,7 @@ export class Server {
     this.usersRouter = usersRouter;
     this.postsRouter = postsRouter;
     this.commentsRouter = commentsRouter;
+    this.likesRouter = likesRouter;
   }
 
   start = () => {
@@ -26,6 +27,7 @@ export class Server {
     app.use(`${this._commonPrefix}/`, this.usersRouter.init());
     app.use(`${this._commonPrefix}/`, this.postsRouter.init());
     app.use(`${this._commonPrefix}/`, this.commentsRouter.init());
+    app.use(`${this._commonPrefix}/`, this.likesRouter.init());
 
     if (!process.env.APP_PORT) {
       console.log(

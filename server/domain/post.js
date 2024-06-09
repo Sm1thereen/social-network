@@ -2,12 +2,13 @@ export class Post {
   #_id;
   #_props;
 
-  constructor({id, text, createdAt, user}) {
+  constructor({id, text, createdAt, user, likes}) {
     this.#_id = id;
     this.#_props = {
       text,
       createdAt,
       user,
+      likes,
     };
   }
 
@@ -20,8 +21,9 @@ export class Post {
                      text,
                      createdAt,
                      user,
+                     likes,
                    }) => {
-    return new Post({id, text, createdAt, user});
+    return new Post({id, text, createdAt, user, likes});
   };
 
   unmarshal = () => {
@@ -30,6 +32,7 @@ export class Post {
       text: this.#_props.text,
       createdAt: this.#_props.createdAt,
       user: this.#_props.user,
+      likes: this.#_props.likes,
     };
   };
 }

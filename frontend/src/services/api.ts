@@ -17,7 +17,6 @@ export const postDataRequest = async (
         'Content-Type': contentType,
       },
     });
-    console.log('response', response.data);
     return response.data;
   } catch (error) {
     console.error('error', error);
@@ -35,7 +34,6 @@ export const getDataRequest = async (url: string) => {
         'Content-Type': 'application/json',
       },
     });
-    console.log(`response - ${url}`, response);
     return response.data;
   } catch (error: any) {
     console.log('Error message', error?.message);
